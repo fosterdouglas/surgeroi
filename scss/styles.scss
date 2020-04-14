@@ -1,0 +1,625 @@
+// // // // // // // // // // // // // // // // // // // // // // //
+//                                                                //
+//                        CSS VARIABLES                           //
+//                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+
+//COLOR VARIABLES
+$plum: #812A80;
+$disco: #9F1F64;
+$golden: #F4B945;
+$charcoal: #383838;
+$ash: #E3E3E3;
+$snow: #EDEDED;
+
+//FONT VARIABLES
+$baseFamily: 'sofia-pro-condensed';
+$thinWeight: 200;
+$baseWeight: 300;
+$boldWeight: 600;
+
+$baseFont: 1rem;
+$mediumFont: 1.5rem;
+$largeFont: 2.5rem;
+$massiveFont: 3rem;
+
+//SPACERS
+$sp1: .25rem;
+$sp2: .5rem;
+$sp3: 1rem;
+$sp4: 1.5rem;
+$sp5: 3rem;
+$sp6: 4rem;
+$sp7: 5rem;
+
+
+// // // // // // // // // // // // // // // // // // // // // // //
+//                                                                //
+//                            IMPORTS                             //
+//                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+
+//BOOTSTRAP COLOR OVERRIDES/ADDITIONS
+$theme-colors: (
+  "plum": $plum,
+  "disco": $disco,
+  "secondary": $golden,
+  "dark": $charcoal,
+  "grey": $ash,
+  "light": $snow
+);
+
+@import 'bootstrap/scss/bootstrap.scss';
+
+
+
+// // // // // // // // // // // // // // // // // // // // // // //
+//                                                                //
+//                            GENERAL                             //
+//                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+html {
+  //height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: $baseFamily;
+  font-weight: $baseWeight;
+  font-size: $baseFont;
+  -moz-font-feature-settings: "salt";
+  -webkit-font-feature-settings: "salt";
+  font-feature-settings: "salt";
+  background: $snow;
+  overflow-x: hidden;
+  //margin-bottom: -570px; //for footer compensation
+}
+
+div {
+  //@extend .d-flex;
+  //@extend .justify-content-center;
+}
+
+.content {
+  @extend .px-5;
+  //@extend .py-4;
+}
+
+.noUserSelect {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ and Edge */
+  user-select: none; /* Standard syntax */
+}
+
+
+// // // // // // // // // // // // // // // // // // // // // // //
+//                                                                //
+//                               TEXT                             //
+//                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+h1 {
+  font-size: $largeFont;
+  font-weight: $thinWeight;
+  text-align: center;
+  @extend .noUserSelect;
+  @extend .mb-0;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $massiveFont;
+  }
+}
+
+h2 {
+  font-size: $massiveFont;
+  @extend .noUserSelect;
+  line-height: 1;
+}
+
+h3 {
+  font-weight: $thinWeight;
+  font-size: $mediumFont;
+}
+
+
+// // // // // // // // // // // // // // // // // // // // // // //
+//                                                                //
+//                            BUTTONS                             //
+//                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+.btn-lg, .btn {
+  border-radius: $sp5;
+  //@extend .mx-2;
+  @extend .my-2;
+  @extend .px-3;
+  @extend .noUserSelect;
+  transition: all .2s;
+  @extend .justify-content-center;
+}
+
+.btn-secondary {
+  color: $disco;
+  font-weight: $boldWeight;
+  text-transform: uppercase;
+  background-image: url("../assets/images/bolt-snow.svg");
+  background-repeat: no-repeat;
+  background-size: 16rem;
+  background-position: 48% 53%;
+  background-blend-mode: multiply;
+  transition: all .35s;
+  @extend .shadow-sm;
+  @extend .noUserSelect;
+}
+
+.btn-secondary:hover {
+  color: $snow;
+  background-blend-mode: multiply;
+  background-size: 7rem;
+  @extend .shadow-lg;
+  transition: all .45s;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active {
+  color: $charcoal;
+  background-blend-mode: multiply;
+  background-size: 8rem;
+  @extend .shadow-none;
+}
+
+.btn-light {
+  color: $charcoal;
+  font-weight: $boldWeight;
+  text-transform: uppercase;
+  @extend .shadow-sm;
+}
+
+.btn-light:hover {
+  @extend .shadow-lg;
+  background: $snow;
+}
+
+.btn-light:not(:disabled):not(.disabled):active {
+  @extend .shadow-none;
+}
+
+.btn-outline-light {
+  @extend .border-0;
+}
+
+.btn-outline-light:hover {
+  @extend .shadow-lg;
+}
+
+.btn-outline-light:not(:disabled):not(.disabled):active {
+  @extend .shadow-none;
+}
+
+.btn-plum {
+  font-size: $mediumFont;
+  background: linear-gradient(50deg, $disco 5%, $plum 70%, $plum 100%);
+  background-size: 400% 400%;
+  @extend .shadow-sm;
+  @extend .px-4;
+  @extend .noUserSelect;
+  transition: all .35s;
+}
+
+.btn-plum:hover {
+  background: linear-gradient(50deg, $plum 5%, $disco 70%, $disco 100%);
+  @extend .shadow-lg;
+  transition: all .35s;
+}
+
+// // // // // // // // // // // // // // // // // // // // // // //
+//                                                                //
+//                        HEADER / FOOTER                         //
+//                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+.welcome {
+  height: 36px;
+  background: linear-gradient(90deg, $disco 5%, $plum 70%, $plum 100%);
+  @extend .shadow-lg;
+  @extend .position-absolute;
+  top:0px;
+  z-index: 20;
+  @extend .text-light;
+  text-transform: uppercase;
+  @extend .justify-content-center;
+  @extend .d-flex;
+  @extend .noUserSelect;
+}
+
+@-moz-document url-prefix() {
+  .skew {
+    filter: saturate(100%) contrast(100%) !important; //accounts for FireFox color difference
+  }
+}
+
+.bannerSkew {
+  background: linear-gradient(50deg, $plum 10%, $disco 100%);
+  margin-top: -150px;
+  -webkit-transform: skewY(-12deg);
+  -moz-transform: skewY(-12deg);
+  -ms-transform: skewY(-12deg);
+  -o-transform: skewY(-12deg);
+  transform: skewY(-12deg);
+  filter: saturate(120%) contrast(110%);
+  @extend .d-flex;
+  margin-bottom: 220px;
+}
+
+.banner {
+  margin-bottom: $sp4;
+  @extend .justify-content-center;
+  @extend .d-flex;
+  margin-top: 200px;
+  -webkit-transform: skewY(12deg);
+  -moz-transform: skewY(12deg);
+  -ms-transform: skewY(12deg);
+  -o-transform: skewY(12deg);
+  transform: skewY(12deg);
+}
+
+.banner div {
+  @extend .justify-content-center;
+  display: flex;
+}
+
+.boltPattern {
+    position: fixed;
+    background-blend-mode: color-burn;
+    mix-blend-mode: color-burn;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-image: url("../assets/images/bolt-snow.svg");
+    background-repeat: repeat;
+    background-size: 5rem;
+    overflow: hidden;
+    opacity: .3;
+    pointer-events: none;
+    animation: animatedBackground 100s linear 1;
+    transform: rotateZ(360deg); //doesn't do anything, hack to help force computer to use GPU for animation rendering
+}
+
+.logo {
+  padding: $sp2 0;
+  pointer-events: none;
+}
+
+.logo img {
+  @extend .w-100;
+  @extend .h-100;
+}
+
+.hero {
+  @extend .d-flex;
+  @extend .justify-content-center;
+  color: $snow;
+  margin-top: $sp5;
+  margin-bottom: $sp4;
+  padding: $sp4 0;
+
+  @include media-breakpoint-only(xs) {
+    margin-top: 0;
+  }
+
+}
+
+.hero > div {
+  @extend .d-flex;
+  @extend .justify-content-center;
+}
+
+@keyframes animatedBackground {
+	from {
+    background-position: 0 0;
+  }
+	to {
+    background-position: 100% 0;
+  }
+}
+
+
+// // // // // // // // // // // // // // // // // // // // // // //
+//                                                                //
+//                               MAIN                             //
+//                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+.card {
+  width: 70%;
+  height: auto;
+  z-index: 7;
+  background-color: transparent;
+  @extend .border-0;
+  margin-bottom: 12rem;
+
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 6rem;
+  }
+
+
+}
+
+.card > img {
+  width: 100%;
+  border-radius: $sp3;
+  @extend .shadow-lg;
+}
+
+.cardOne {
+  margin-top: -100px;
+  margin-left: 12%;
+}
+
+.cardTwo {
+  margin-left: 20%;
+}
+
+.cardTwo h2 {
+  width: 75%;
+  @extend .text-center;
+  @extend .mx-auto;
+
+  @include media-breakpoint-up(sm) {
+    width: 40%;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 100%;
+  }
+}
+
+.cardText {
+  @extend .text-center;
+  @extend .mb-3;
+}
+
+.titleText {
+  @extend .text-center;
+}
+
+.highlightText-Lift {
+  vertical-align: super;
+  @extend .position-relative;
+}
+
+.lift {
+  @extend .position-absolute;
+  width: 150%;
+  margin-top: .7rem;
+  margin-left: -3.7rem;
+}
+
+.highlightText-Wave {
+  @extend .position-relative;
+}
+
+.wave {
+  @extend .position-absolute;
+  width: 5000%;
+  margin-top: 3.5rem;
+  margin-left: -5.1rem;
+
+  @include media-breakpoint-between(xs, sm) {
+    margin-left: -5.7rem;
+    margin-top: 6.4rem;
+  }
+}
+
+.highlightText-Wave ~ h2 {
+  @extend .position-relative;
+}
+
+.supportText {
+  @extend .mx-auto;
+  @extend .w-75;
+}
+
+
+.boltOne, .boltTwo {
+    position: relative;
+    pointer-events: none;
+}
+
+.boltOne > img {
+  top: -220px;
+  left: -28%;
+  position: absolute;
+  z-index: -3; //sets the bolt behind the top banner
+
+  @include media-breakpoint-only(xs) {
+    top:0px;
+    height: 600px;
+    left: -40%;
+  }
+  @include media-breakpoint-only(sm) {
+    top:-150px;
+    height: 900px;
+  }
+  @include media-breakpoint-only(md) {
+    top:-140px;
+    height: 1100px;
+  }
+  @include media-breakpoint-only(lg) {
+    height: 1300px;
+  }
+  @include media-breakpoint-only(xl) {
+    height: 1500px;
+  }
+}
+
+.boltTwo > img {
+  top: -180px;
+  position: absolute;
+  left: 40%;
+  transform: rotate(46deg) scaleY(-1);
+
+  @include media-breakpoint-only(xs) {
+    top: 120px;
+    height: 600px;
+  }
+  @include media-breakpoint-only(sm) {
+    top: 120px;
+    height: 900px;
+  }
+  @include media-breakpoint-only(md) {
+    top: -50px;
+    height: 1100px;
+  }
+  @include media-breakpoint-only(lg) {
+    height: 1300px;
+  }
+  @include media-breakpoint-only(xl) {
+    height: 1500px;
+  }
+}
+
+// // // // // // // // // // // // // // // // // // // // // // //
+//                                                                //
+//                            SECTIONS                            //
+//                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+
+.sectionSkew {
+  background: linear-gradient(50deg, rgba($snow, 0) 0%, rgba($ash, 1) 60%, rgba($ash, 1) 120%);
+  -webkit-transform: skewY(-12deg);
+  -moz-transform: skewY(-12deg);
+  -ms-transform: skewY(-12deg);
+  -o-transform: skewY(-12deg);
+  transform: skewY(-12deg);
+  @extend .d-flex;
+  z-index: 20;
+  @extend .py-5;
+  margin-bottom: $sp7;
+  margin-top: 8rem;
+}
+
+.section {
+  @extend .mx-auto;
+  @extend .justify-content-center;
+  @extend .d-flex;
+  -webkit-transform: skewY(12deg);
+  -moz-transform: skewY(12deg);
+  -ms-transform: skewY(12deg);
+  -o-transform: skewY(12deg);
+  transform: skewY(12deg);
+}
+
+.features {
+  height: auto;
+  text-align: justify;
+  margin-bottom: 10rem;
+}
+
+.featuresNav {
+  @extend .mt-5;
+  font-size: $mediumFont;
+  margin-bottom: auto;
+  @extend .text-center;
+  @extend .mr-3;
+}
+
+.nav-pills .nav-link {
+  color: $charcoal;
+  border: 4px solid transparent;
+  border-radius: $sp5;
+  @extend .py-1;
+  @extend .my-2;
+  transition: all .3s;
+}
+
+.nav-pills .nav-link h3 {
+  @extend .position-relative;
+  @extend .mb-0;
+  font-weight: $baseWeight;
+}
+
+.nav-pills .nav-link.active {
+  background: transparent;
+  color: $charcoal;
+}
+
+.nav-pills .nav-link:hover:not(.active) {
+  background: $ash;
+  border-radius: $sp5;
+  color: $charcoal;
+  transition: all .3s;
+}
+
+.features h2 {
+  @extend .text-center;
+  @extend .mb-3;
+}
+
+.highlightText-Underline {
+  @extend .position-relative;
+}
+
+.underline {
+  @extend .position-absolute;
+  width: 180px;
+  margin-top: 1.1rem;
+  margin-left: -5.6rem;
+}
+
+.nav-link.active .underline {
+  display: inline; //show underline on active item
+  animation: animatedUnderline .25s ease 1;
+  transform-origin: 0px 10px;
+}
+
+.nav-link:not(.active) .underline {
+  display: none; //hide underlines on inactive items
+}
+
+.highlightText-Circle {
+  @extend .position-relative;
+}
+
+.circle {
+  @extend .position-absolute;
+  width: 90px;
+  margin-top: .3rem;
+  margin-left: -14.3rem;
+}
+
+.highlightText-Circle ~ h2 {
+  @extend .position-relative;
+}
+
+@keyframes animatedUnderline {
+	from {
+    transform: scaleX(0) rotate(3deg);
+  }
+	to {
+    transform: scaleX(1);
+  }
+}
+
+// // // // // // // // // // // // // // // // // // // // // // //
+//                                                                //
+//                             FOOTER                            //
+//                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+
+.footerSkew {
+  background: linear-gradient(50deg, $plum 10%, $disco 100%);
+  -webkit-transform: skewY(-12deg);
+  -moz-transform: skewY(-12deg);
+  -ms-transform: skewY(-12deg);
+  -o-transform: skewY(-12deg);
+  transform: skewY(-12deg);
+  filter: saturate(120%) contrast(110%);
+  @extend .d-flex;
+}
+
+.footer {
+  @extend .justify-content-center;
+  @extend .d-flex;
+  @extend .my-5;
+  -webkit-transform: skewY(12deg);
+  -moz-transform: skewY(12deg);
+  -ms-transform: skewY(12deg);
+  -o-transform: skewY(12deg);
+  transform: skewY(12deg);
+}
