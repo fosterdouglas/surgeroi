@@ -140,7 +140,7 @@ h3 {
   color: $disco;
   font-weight: $boldWeight;
   text-transform: uppercase;
-  background-image: url("../assets/images/bolt-snow.svg");
+  background-image: url("/assets/images/bolt-snow.svg");
   background-repeat: no-repeat;
   background-size: 16rem;
   background-position: 48% 53%;
@@ -271,13 +271,13 @@ h3 {
     z-index: 1;
     height: 100%;
     width: 100%;
-    background-image: url("../assets/images/bolt-snow.svg");
+    background-image: url("/assets/images/bolt-snow.svg");
     background-repeat: repeat;
     background-size: 5rem;
     overflow: hidden;
     opacity: .3;
     pointer-events: none;
-    animation: animatedBackground 100s linear 1;
+    //animation: animatedBackground 100s linear 1;
     transform: rotateZ(360deg); //doesn't do anything, hack to help force computer to use GPU for animation rendering
 }
 
