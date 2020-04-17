@@ -7516,7 +7516,6 @@ body {
   -webkit-font-feature-settings: "salt";
   font-feature-settings: "salt";
   background: #EDEDED;
-  width: 100%;
   overflow-x: hidden; }
 
 .noUserSelect, h1, h2, .btn-lg, .btn-group-lg > .btn, .btn, .btn-secondary, .btn-plum, .welcome {
@@ -7551,7 +7550,7 @@ h3 {
   color: #9F1F64;
   font-weight: 600;
   text-transform: uppercase;
-  background-image: url("/assets/images/bolt-snow.svg");
+  background-image: url("assets/images/bolt-snow.svg");
   background-repeat: no-repeat;
   background-size: 16rem;
   background-position: 48% 53%;
@@ -7628,7 +7627,7 @@ h3 {
   z-index: 1;
   height: 100%;
   width: 100%;
-  background-image: url("/assets/images/bolt-snow.svg");
+  background-image: url("assets/images/bolt-snow.svg");
   background-repeat: repeat;
   background-size: 5rem;
   overflow: hidden;

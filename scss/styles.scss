@@ -58,6 +58,10 @@ $theme-colors: (
 //                            GENERAL                             //
 //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
+html {
+
+}
+
 body {
   font-family: $baseFamily;
   font-weight: $baseWeight;
@@ -66,8 +70,7 @@ body {
   -webkit-font-feature-settings: "salt";
   font-feature-settings: "salt";
   background: $snow;
-  width: 100%;
-  overflow-x: hidden; //prevents sideways scrolling from large bolt images
+  overflow-x:hidden;
 }
 
 
@@ -130,7 +133,7 @@ h3 {
   color: $disco;
   font-weight: $boldWeight;
   text-transform: uppercase;
-  background-image: url("/assets/images/bolt-snow.svg");
+  background-image: url("assets/images/bolt-snow.svg");
   background-repeat: no-repeat;
   background-size: 16rem;
   background-position: 48% 53%;
@@ -261,7 +264,7 @@ h3 {
     z-index: 1;
     height: 100%;
     width: 100%;
-    background-image: url("/assets/images/bolt-snow.svg");
+    background-image: url("assets/images/bolt-snow.svg");
     background-repeat: repeat;
     background-size: 5rem;
     overflow: hidden;
