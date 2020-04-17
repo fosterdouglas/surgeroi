@@ -7659,11 +7659,7 @@ h3 {
   width: 70%;
   height: auto;
   z-index: 7;
-  background-color: transparent;
-  margin-bottom: 12rem; }
-  @media (max-width: 575.98px) {
-    .card {
-      margin-bottom: 6rem; } }
+  background-color: transparent; }
 
 .card > img {
   width: 100%;
@@ -7671,10 +7667,26 @@ h3 {
 
 .cardOne {
   margin-top: -100px;
-  margin-left: 12%; }
+  margin-left: 12%;
+  margin-bottom: 8rem; }
+  @media (max-width: 575.98px) {
+    .cardOne {
+      margin-top: -140px;
+      margin-bottom: 5rem; } }
+  @media (min-width: 576px) and (max-width: 1199.98px) {
+    .cardOne {
+      margin-bottom: 7rem; } }
 
 .cardTwo {
-  margin-left: 20%; }
+  margin-left: 20%;
+  margin-top: 0px;
+  margin-bottom: 17rem; }
+  @media (max-width: 575.98px) {
+    .cardTwo {
+      margin-bottom: 7rem; } }
+  @media (min-width: 576px) and (max-width: 1199.98px) {
+    .cardTwo {
+      margin-bottom: 13rem; } }
 
 .cardTwo h2 {
   width: 75%; }
@@ -7686,23 +7698,7 @@ h3 {
       width: 100%; } }
 
 .cardThree {
-  margin-top: 400px;
   margin-left: 12%; }
-  @media (max-width: 575.98px) {
-    .cardThree {
-      margin-top: 180px; } }
-  @media (min-width: 576px) and (max-width: 767.98px) {
-    .cardThree {
-      margin-top: 300px; } }
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    .cardThree {
-      margin-top: 300px; } }
-  @media (min-width: 992px) and (max-width: 1199.98px) {
-    .cardThree {
-      margin-top: 250px; } }
-  @media (min-width: 1200px) {
-    .cardThree {
-      margin-top: 330px; } }
 
 .highlightText-Lift {
   vertical-align: super; }
@@ -7735,14 +7731,14 @@ h3 {
 
 .boltOne > img {
   top: -220px;
-  left: -28%;
+  left: -34%;
   position: absolute;
   z-index: -3; }
   @media (max-width: 575.98px) {
     .boltOne > img {
       top: 0px;
       height: 600px;
-      left: -40%; } }
+      left: -44%; } }
   @media (min-width: 576px) and (max-width: 767.98px) {
     .boltOne > img {
       top: -150px;
@@ -7750,7 +7746,8 @@ h3 {
   @media (min-width: 768px) and (max-width: 991.98px) {
     .boltOne > img {
       top: -140px;
-      height: 1100px; } }
+      height: 1100px;
+      left: -40%; } }
   @media (min-width: 992px) and (max-width: 1199.98px) {
     .boltOne > img {
       height: 1300px; } }
@@ -7762,18 +7759,19 @@ h3 {
   top: -180px;
   position: absolute;
   left: 40%;
-  transform: rotate(46deg) scaleY(-1); }
+  transform: rotate(60deg) scaleY(-1); }
   @media (max-width: 575.98px) {
     .boltTwo > img {
-      top: 120px;
-      height: 600px; } }
+      top: 100px;
+      height: 600px;
+      left: 47%; } }
   @media (min-width: 576px) and (max-width: 767.98px) {
     .boltTwo > img {
-      top: 120px;
+      top: 40px;
       height: 900px; } }
   @media (min-width: 768px) and (max-width: 991.98px) {
     .boltTwo > img {
-      top: -50px;
+      top: -130px;
       height: 1100px; } }
   @media (min-width: 992px) and (max-width: 1199.98px) {
     .boltTwo > img {
@@ -7790,14 +7788,15 @@ h3 {
   @media (max-width: 575.98px) {
     .boltThree > img {
       top: 50px;
-      height: 600px; } }
+      height: 600px;
+      left: -35%; } }
   @media (min-width: 576px) and (max-width: 767.98px) {
     .boltThree > img {
       top: -80px;
       height: 900px; } }
   @media (min-width: 768px) and (max-width: 991.98px) {
     .boltThree > img {
-      top: -80px;
+      top: -180px;
       height: 1100px; } }
   @media (min-width: 992px) and (max-width: 1199.98px) {
     .boltThree > img {
@@ -7816,21 +7815,23 @@ h3 {
       margin-left: -7.3rem; } }
 
 .cta {
-  margin-top: 23rem; }
+  margin-top: 18rem;
+  margin-bottom: 8rem; }
   @media (max-width: 575.98px) {
     .cta {
-      margin-top: 14rem; } }
+      margin-top: 14rem;
+      margin-bottom: 6rem; } }
 
 .sectionSkew {
-  background: linear-gradient(50deg, rgba(237, 237, 237, 0) 0%, #e3e3e3 60%, #e3e3e3 120%);
+  background: linear-gradient(60deg, #e3e3e3 0%, #ededed 35%, #ededed 40%, #ededed 65%, #e3e3e3 120%);
   -webkit-transform: skewY(-12deg);
   -moz-transform: skewY(-12deg);
   -ms-transform: skewY(-12deg);
   -o-transform: skewY(-12deg);
   transform: skewY(-12deg);
   z-index: 20;
-  margin-bottom: 5rem;
-  margin-top: 8rem; }
+  margin-bottom: 4rem;
+  margin-top: 4rem; }
 
 .section {
   -webkit-transform: skewY(12deg);
@@ -7842,7 +7843,7 @@ h3 {
 .features {
   height: auto;
   text-align: justify;
-  margin-bottom: 10rem; }
+  margin: 5rem 0; }
 
 .featuresNav {
   font-size: 1.5rem; }
