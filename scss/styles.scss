@@ -58,11 +58,6 @@ $theme-colors: (
 //                            GENERAL                             //
 //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
-html {
-  //height: 100%;
-  width: 100%;
-}
-
 body {
   font-family: $baseFamily;
   font-weight: $baseWeight;
@@ -71,18 +66,13 @@ body {
   -webkit-font-feature-settings: "salt";
   font-feature-settings: "salt";
   background: $snow;
-  overflow-x: hidden;
-  //margin-bottom: -570px; //for footer compensation
+  width: 100%;
+  overflow-x: hidden; //prevents sideways scrolling from large bolt images
 }
 
-div {
-  //@extend .d-flex;
-  //@extend .justify-content-center;
-}
 
 .content {
   @extend .px-5;
-  //@extend .py-4;
 }
 
 .noUserSelect {
@@ -336,8 +326,6 @@ h3 {
   @include media-breakpoint-only(xs) {
     margin-bottom: 6rem;
   }
-
-
 }
 
 .card > img {
@@ -356,6 +344,7 @@ h3 {
 }
 
 .cardTwo h2 {
+  // this is for proper line breaking for the 2nd group specifically
   width: 75%;
   @extend .text-center;
   @extend .mx-auto;
@@ -366,6 +355,27 @@ h3 {
 
   @include media-breakpoint-up(md) {
     width: 100%;
+  }
+}
+
+.cardThree {
+  margin-top: 400px;
+  margin-left: 12%;
+
+  @include media-breakpoint-only(xs) {
+    margin-top: 180px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 300px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-top: 300px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-top: 250px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 330px;
   }
 }
 
@@ -410,13 +420,28 @@ h3 {
   @extend .position-relative;
 }
 
+.star {
+  @extend .position-absolute;
+  width: 78px; //this one didnt work with percentage for some reason?
+  margin-top: 0.3rem;
+  margin-left: -4rem;
+
+  @include media-breakpoint-between(xs, sm) {
+    margin-left: 2.5rem;
+  }
+}
+
+.highlightText-Star ~ h2 {
+  @extend .position-relative;
+}
+
 .supportText {
   @extend .mx-auto;
   @extend .w-75;
 }
 
 
-.boltOne, .boltTwo {
+.boltOne, .boltTwo, .boltThree {
     position: relative;
     pointer-events: none;
 }
@@ -474,6 +499,65 @@ h3 {
   }
 }
 
+.boltThree > img {
+  top: -240px;
+  position: absolute;
+  left: -30%;
+  transform: rotate(314deg) scaleX(-1);
+
+  @include media-breakpoint-only(xs) {
+    top: 50px;
+    height: 600px;
+  }
+  @include media-breakpoint-only(sm) {
+    top: -80px;
+    height: 900px;
+  }
+  @include media-breakpoint-only(md) {
+    top: -80px;
+    height: 1100px;
+  }
+  @include media-breakpoint-only(lg) {
+    top: -200px;
+    height: 1300px;
+  }
+  @include media-breakpoint-only(xl) {
+    height: 1500px;
+  }
+}
+
+// // // // // // // // // // // // // // // // // // // // // // //
+//                                                                //
+//                               CTA                              //
+//                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+.highlightText-Circle {
+  @extend .position-relative;
+}
+
+.circle {
+  @extend .position-absolute;
+  width: 90px;
+  margin-top: .3rem;
+  margin-left: -14.3rem;
+
+  @include media-breakpoint-only(xs) {
+    margin-left: -7.3rem;
+  }
+}
+
+.highlightText-Circle ~ h2 {
+  @extend .position-relative;
+}
+
+.cta {
+  margin-top: 23rem;
+
+  @include media-breakpoint-only(xs) {
+    margin-top: 14rem;
+  }
+}
+
 // // // // // // // // // // // // // // // // // // // // // // //
 //                                                                //
 //                            SECTIONS                            //
@@ -512,11 +596,21 @@ h3 {
 }
 
 .featuresNav {
-  @extend .mt-5;
+  @extend .mt-md-5;
+  @extend .mb-3;
+  @extend .mb-md-0;
   font-size: $mediumFont;
-  margin-bottom: auto;
   @extend .text-center;
-  @extend .mr-3;
+  @extend .mr-md-3;
+  //@extend .justify-content-center;
+
+  @include media-breakpoint-between(xs, sm) {
+    //display: none;
+  }
+}
+
+.nav {
+  @extend .justify-content-center;
 }
 
 .nav-pills .nav-link {
@@ -526,6 +620,8 @@ h3 {
   @extend .py-1;
   @extend .my-2;
   transition: all .3s;
+  @extend .mx-4;
+  @extend .mx-md-0;
 }
 
 .nav-pills .nav-link h3 {
@@ -572,21 +668,6 @@ h3 {
   display: none; //hide underlines on inactive items
 }
 
-.highlightText-Circle {
-  @extend .position-relative;
-}
-
-.circle {
-  @extend .position-absolute;
-  width: 90px;
-  margin-top: .3rem;
-  margin-left: -14.3rem;
-}
-
-.highlightText-Circle ~ h2 {
-  @extend .position-relative;
-}
-
 @keyframes animatedUnderline {
 	from {
     transform: scaleX(0) rotate(3deg);
@@ -596,9 +677,15 @@ h3 {
   }
 }
 
+.pricing {
+  @include media-breakpoint-only(xs) {
+    display: none;
+  }
+}
+
 // // // // // // // // // // // // // // // // // // // // // // //
 //                                                                //
-//                             FOOTER                            //
+//                             FOOTER                             //
 //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
@@ -611,12 +698,13 @@ h3 {
   transform: skewY(-12deg);
   filter: saturate(120%) contrast(110%);
   @extend .d-flex;
+
 }
 
 .footer {
   @extend .justify-content-center;
   @extend .d-flex;
-  @extend .my-5;
+  @extend .py-5;
   -webkit-transform: skewY(12deg);
   -moz-transform: skewY(12deg);
   -ms-transform: skewY(12deg);

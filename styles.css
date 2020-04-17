@@ -5357,7 +5357,7 @@ button.bg-grey:focus {
 .justify-content-end {
   justify-content: flex-end !important; }
 
-.justify-content-center, .btn-lg, .btn-group-lg > .btn, .btn, .welcome, .banner, .banner div, .hero, .hero > div, .section, .footer {
+.justify-content-center, .btn-lg, .btn-group-lg > .btn, .btn, .welcome, .banner, .banner div, .hero, .hero > div, .section, .nav, .footer {
   justify-content: center !important; }
 
 .justify-content-between {
@@ -5747,10 +5747,10 @@ button.bg-grey:focus {
 .position-static {
   position: static !important; }
 
-.position-relative, .highlightText-Lift, .highlightText-Wave, .highlightText-Wave ~ h2, .nav-pills .nav-link h3, .highlightText-Underline, .highlightText-Circle, .highlightText-Circle ~ h2 {
+.position-relative, .highlightText-Lift, .highlightText-Wave, .highlightText-Wave ~ h2, .highlightText-Star ~ h2, .highlightText-Circle, .highlightText-Circle ~ h2, .nav-pills .nav-link h3, .highlightText-Underline {
   position: relative !important; }
 
-.position-absolute, .welcome, .lift, .wave, .underline, .circle {
+.position-absolute, .welcome, .lift, .wave, .star, .circle, .underline {
   position: absolute !important; }
 
 .position-fixed {
@@ -5941,11 +5941,11 @@ button.bg-grey:focus {
 .my-3 {
   margin-top: 1rem !important; }
 
-.mr-3, .featuresNav,
+.mr-3,
 .mx-3 {
   margin-right: 1rem !important; }
 
-.mb-3, .cardText, .features h2,
+.mb-3, .cardText, .featuresNav, .features h2,
 .my-3 {
   margin-bottom: 1rem !important; }
 
@@ -5961,7 +5961,8 @@ button.bg-grey:focus {
   margin-top: 1.5rem !important; }
 
 .mr-4,
-.mx-4 {
+.mx-4,
+.nav-pills .nav-link {
   margin-right: 1.5rem !important; }
 
 .mb-4,
@@ -5969,15 +5970,15 @@ button.bg-grey:focus {
   margin-bottom: 1.5rem !important; }
 
 .ml-4,
-.mx-4 {
+.mx-4,
+.nav-pills .nav-link {
   margin-left: 1.5rem !important; }
 
 .m-5 {
   margin: 3rem !important; }
 
-.mt-5, .featuresNav,
-.my-5,
-.footer {
+.mt-5,
+.my-5 {
   margin-top: 3rem !important; }
 
 .mr-5,
@@ -5985,8 +5986,7 @@ button.bg-grey:focus {
   margin-right: 3rem !important; }
 
 .mb-5,
-.my-5,
-.footer {
+.my-5 {
   margin-bottom: 3rem !important; }
 
 .ml-5,
@@ -6103,7 +6103,8 @@ button.bg-grey:focus {
 
 .pt-5,
 .py-5,
-.sectionSkew {
+.sectionSkew,
+.footer {
   padding-top: 3rem !important; }
 
 .pr-5,
@@ -6113,7 +6114,8 @@ button.bg-grey:focus {
 
 .pb-5,
 .py-5,
-.sectionSkew {
+.sectionSkew,
+.footer {
   padding-bottom: 3rem !important; }
 
 .pl-5,
@@ -6502,13 +6504,15 @@ button.bg-grey:focus {
   .my-md-0 {
     margin-top: 0 !important; }
   .mr-md-0,
-  .mx-md-0 {
+  .mx-md-0,
+  .nav-pills .nav-link {
     margin-right: 0 !important; }
-  .mb-md-0,
+  .mb-md-0, .featuresNav,
   .my-md-0 {
     margin-bottom: 0 !important; }
   .ml-md-0,
-  .mx-md-0 {
+  .mx-md-0,
+  .nav-pills .nav-link {
     margin-left: 0 !important; }
   .m-md-1 {
     margin: 0.25rem !important; }
@@ -6543,7 +6547,7 @@ button.bg-grey:focus {
   .mt-md-3,
   .my-md-3 {
     margin-top: 1rem !important; }
-  .mr-md-3,
+  .mr-md-3, .featuresNav,
   .mx-md-3 {
     margin-right: 1rem !important; }
   .mb-md-3,
@@ -6568,7 +6572,7 @@ button.bg-grey:focus {
     margin-left: 1.5rem !important; }
   .m-md-5 {
     margin: 3rem !important; }
-  .mt-md-5,
+  .mt-md-5, .featuresNav,
   .my-md-5 {
     margin-top: 3rem !important; }
   .mr-md-5,
@@ -7504,9 +7508,6 @@ a.text-grey:hover, a.text-grey:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
-html {
-  width: 100%; }
-
 body {
   font-family: "sofia-pro-condensed";
   font-weight: 300;
@@ -7515,6 +7516,7 @@ body {
   -webkit-font-feature-settings: "salt";
   font-feature-settings: "salt";
   background: #EDEDED;
+  width: 100%;
   overflow-x: hidden; }
 
 .noUserSelect, h1, h2, .btn-lg, .btn-group-lg > .btn, .btn, .btn-secondary, .btn-plum, .welcome {
@@ -7683,6 +7685,25 @@ h3 {
     .cardTwo h2 {
       width: 100%; } }
 
+.cardThree {
+  margin-top: 400px;
+  margin-left: 12%; }
+  @media (max-width: 575.98px) {
+    .cardThree {
+      margin-top: 180px; } }
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .cardThree {
+      margin-top: 300px; } }
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .cardThree {
+      margin-top: 300px; } }
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .cardThree {
+      margin-top: 250px; } }
+  @media (min-width: 1200px) {
+    .cardThree {
+      margin-top: 330px; } }
+
 .highlightText-Lift {
   vertical-align: super; }
 
@@ -7700,7 +7721,15 @@ h3 {
       margin-left: -5.7rem;
       margin-top: 6.4rem; } }
 
-.boltOne, .boltTwo {
+.star {
+  width: 78px;
+  margin-top: 0.3rem;
+  margin-left: -4rem; }
+  @media (max-width: 767.98px) {
+    .star {
+      margin-left: 2.5rem; } }
+
+.boltOne, .boltTwo, .boltThree {
   position: relative;
   pointer-events: none; }
 
@@ -7753,6 +7782,45 @@ h3 {
     .boltTwo > img {
       height: 1500px; } }
 
+.boltThree > img {
+  top: -240px;
+  position: absolute;
+  left: -30%;
+  transform: rotate(314deg) scaleX(-1); }
+  @media (max-width: 575.98px) {
+    .boltThree > img {
+      top: 50px;
+      height: 600px; } }
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .boltThree > img {
+      top: -80px;
+      height: 900px; } }
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .boltThree > img {
+      top: -80px;
+      height: 1100px; } }
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .boltThree > img {
+      top: -200px;
+      height: 1300px; } }
+  @media (min-width: 1200px) {
+    .boltThree > img {
+      height: 1500px; } }
+
+.circle {
+  width: 90px;
+  margin-top: .3rem;
+  margin-left: -14.3rem; }
+  @media (max-width: 575.98px) {
+    .circle {
+      margin-left: -7.3rem; } }
+
+.cta {
+  margin-top: 23rem; }
+  @media (max-width: 575.98px) {
+    .cta {
+      margin-top: 14rem; } }
+
 .sectionSkew {
   background: linear-gradient(50deg, rgba(237, 237, 237, 0) 0%, #e3e3e3 60%, #e3e3e3 120%);
   -webkit-transform: skewY(-12deg);
@@ -7777,8 +7845,7 @@ h3 {
   margin-bottom: 10rem; }
 
 .featuresNav {
-  font-size: 1.5rem;
-  margin-bottom: auto; }
+  font-size: 1.5rem; }
 
 .nav-pills .nav-link {
   color: #383838;
@@ -7812,16 +7879,15 @@ h3 {
 .nav-link:not(.active) .underline {
   display: none; }
 
-.circle {
-  width: 90px;
-  margin-top: .3rem;
-  margin-left: -14.3rem; }
-
 @keyframes animatedUnderline {
   from {
     transform: scaleX(0) rotate(3deg); }
   to {
     transform: scaleX(1); } }
+
+@media (max-width: 575.98px) {
+  .pricing {
+    display: none; } }
 
 .footerSkew {
   background: linear-gradient(50deg, #812A80 10%, #9F1F64 100%);
