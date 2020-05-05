@@ -238,6 +238,7 @@ h3 {
   filter: saturate(120%) contrast(110%);
   @extend .d-flex;
   margin-bottom: 220px;
+  @extend .shadow-lg;
 }
 
 .banner {
@@ -258,20 +259,47 @@ h3 {
 }
 
 .boltPattern {
-    position: fixed;
+    position: absolute;
     background-blend-mode: color-burn;
     mix-blend-mode: color-burn;
     z-index: 1;
     height: 100%;
-    width: 100%;
+    width: 200%;
+    //left:0;
     background-image: url("assets/images/bolt-snow.svg");
     background-repeat: repeat;
-    background-size: 5rem;
+    background-size: 8rem;
     overflow: hidden;
     opacity: .3;
     pointer-events: none;
-    //animation: animatedBackground 100s linear 1;
-    transform: rotateZ(360deg); //doesn't do anything, hack to help force computer to use GPU for animation rendering
+    animation: animatedBackground 70s linear 1;
+}
+
+.boltPattern2 {
+    position: absolute;
+    background-blend-mode: color-burn;
+    mix-blend-mode: color-burn;
+    z-index: 1;
+    height: 23%;
+    width: 200%;
+    background-image: url("assets/images/bolt-snow.svg");
+    background-repeat: repeat;
+    background-size: 4.8rem;
+    overflow: hidden;
+    opacity: .3;
+    pointer-events: none;
+    animation: animatedBackground 70s linear infinite;
+}
+
+@keyframes animatedBackground {
+	from {
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+  }
+	to {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+  }
 }
 
 .logo {
@@ -282,6 +310,17 @@ h3 {
 .logo img {
   @extend .w-100;
   @extend .h-100;
+}
+
+.logoSm {
+  padding: $sp5 $sp5;
+  @extend .ml-auto;
+  pointer-events: none;
+}
+
+.logoSm img {
+  @extend .w-50;
+  @extend .h-50;
 }
 
 .hero {
@@ -303,14 +342,7 @@ h3 {
   @extend .justify-content-center;
 }
 
-@keyframes animatedBackground {
-	from {
-    background-position: 0 0;
-  }
-	to {
-    background-position: 100% 0;
-  }
-}
+
 
 
 // // // // // // // // // // // // // // // // // // // // // // //
@@ -319,7 +351,7 @@ h3 {
 //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 .card {
-  width: 70%;
+  width: 60%;
   height: auto;
   z-index: 7;
   background-color: transparent;
@@ -327,15 +359,45 @@ h3 {
 
 }
 
-.card > img {
+.blur {
+  filter: blur(1.5px);
+}
+
+.highlightImg {
   width: 100%;
-  border-radius: $sp3;
+  @extend .position-relative;
+}
+
+.img {
+  width: 100%;
+  border-radius: $sp1;
   @extend .shadow-lg;
+
+  @include media-breakpoint-up(md) {
+    border-radius: $sp3;
+  }
+}
+
+.subImg {
+  @extend .position-absolute;
+  border-radius: $sp1;
+  @extend .shadow-lg;
+  top:-4%;
+  left: 70%;
+  width: 40% !important;
+
+  @include media-breakpoint-up(md) {
+    border-radius: $sp3;
+  }
+}
+
+.subImg2 {
+  top:17%;
 }
 
 .cardOne {
-  margin-top: -100px;
-  margin-left: 12%;
+  margin-top: -70px;
+  margin-left: 18%;
   margin-bottom: 8rem;
 
   @include media-breakpoint-only(xs) {
@@ -348,7 +410,7 @@ h3 {
 }
 
 .cardTwo {
-  margin-left: 20%;
+  margin-left: 28%;
   margin-top: 0px;
   margin-bottom: 17rem;
 
@@ -362,22 +424,40 @@ h3 {
 }
 
 .cardTwo h2 {
-  // this is for proper line breaking for the 2nd group specifically
-  width: 75%;
   @extend .text-center;
-  @extend .mx-auto;
-
-  @include media-breakpoint-up(sm) {
-    width: 40%;
-  }
 
   @include media-breakpoint-up(md) {
-    width: 100%;
+    margin-bottom: $sp3;
   }
 }
 
 .cardThree {
-  margin-left: 12%;
+  margin-left: 22%;
+
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 7rem;
+  }
+
+  @include media-breakpoint-between(sm, lg) {
+    margin-bottom: 13rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 9rem;
+  }
+}
+
+.cardFour {
+  margin-left: 28%;
+  margin-top: 0px;
+
+
+}
+
+.cardFour h2 {
+  width: 75%;
+  @extend .text-center;
+  @extend .mx-auto;
 }
 
 .cardText {
@@ -408,13 +488,8 @@ h3 {
 .wave {
   @extend .position-absolute;
   width: 5000%;
-  margin-top: 3.5rem;
-  margin-left: -5.1rem;
-
-  @include media-breakpoint-between(xs, sm) {
-    margin-left: -5.7rem;
-    margin-top: 6.4rem;
-  }
+  margin-left: -5.7rem;
+  margin-top: 6.4rem;
 }
 
 .highlightText-Wave ~ h2 {
@@ -436,13 +511,26 @@ h3 {
   @extend .position-relative;
 }
 
-.supportText {
-  @extend .mx-auto;
-  @extend .w-75;
+.bulb {
+  @extend .position-absolute;
+  width: 58px;
+  margin-left: -5.95rem;
+  margin-top: .35rem;
 }
 
 
-.boltOne, .boltTwo, .boltThree {
+.highlightText-Bulb ~ h2 {
+  @extend .position-relative;
+}
+
+
+.supportText {
+  @extend .text-center;
+  margin-bottom: $sp4;
+}
+
+
+.boltOne, .boltTwo, .boltThree, .boltFour {
     position: relative;
     pointer-events: none;
 }
@@ -478,7 +566,7 @@ h3 {
 .boltTwo > img {
   top: -180px;
   position: absolute;
-  left: 40%;
+  left: 45%;
   transform: rotate(60deg) scaleY(-1);
 
   @include media-breakpoint-only(xs) {
@@ -491,22 +579,24 @@ h3 {
     height: 900px;
   }
   @include media-breakpoint-only(md) {
-    top: -130px;
+    top: -50px;
     height: 1100px;
   }
   @include media-breakpoint-only(lg) {
+    top: -110px;
     height: 1300px;
   }
   @include media-breakpoint-only(xl) {
     height: 1500px;
+    top: -140px;
   }
 }
 
 .boltThree > img {
   top: -240px;
   position: absolute;
-  left: -30%;
-  transform: rotate(314deg) scaleX(-1);
+  left: -35%;
+  transform: rotate(80deg) scaleX(-1);
 
   @include media-breakpoint-only(xs) {
     top: 50px;
@@ -518,15 +608,45 @@ h3 {
     height: 900px;
   }
   @include media-breakpoint-only(md) {
-    top: -180px;
+    top: -200px;
     height: 1100px;
   }
   @include media-breakpoint-only(lg) {
-    top: -200px;
+    top: -280px;
     height: 1300px;
   }
   @include media-breakpoint-only(xl) {
     height: 1500px;
+    top: -400px;
+  }
+}
+
+.boltFour > img {
+  top: -180px;
+  position: absolute;
+  left: 50%;
+  transform: rotate(60deg) scaleY(-1);
+
+  @include media-breakpoint-only(xs) {
+    top: 0px;
+    height: 600px;
+    left: 47%;
+  }
+  @include media-breakpoint-only(sm) {
+    top: -100px;
+    height: 900px;
+  }
+  @include media-breakpoint-only(md) {
+    top: -150px;
+    height: 1100px;
+  }
+  @include media-breakpoint-only(lg) {
+    height: 1300px;
+    top: -230px;
+  }
+  @include media-breakpoint-only(xl) {
+    height: 1500px;
+    top: -300px;
   }
 }
 
@@ -555,12 +675,12 @@ h3 {
 }
 
 .cta {
-  margin-top: 18rem;
+  margin-top: 15rem;
   margin-bottom: 8rem;
 
   @include media-breakpoint-only(xs) {
-    margin-top: 14rem;
-    margin-bottom: 6rem;
+    margin-top: 8rem;
+    margin-bottom: 7rem;
   }
 }
 
@@ -571,7 +691,7 @@ h3 {
 // // // // // // // // // // // // // // // // // // // // // // //
 
 .sectionSkew {
-  background: linear-gradient(60deg, rgba($ash, 1) 0%, rgba($snow, 1) 35%, rgba($snow, 1) 40%, rgba($snow, 1) 65%, rgba($ash, 1) 120%);
+  background: linear-gradient(60deg, rgba($ash, 1) 0%, rgba($snow, 1) 35%, rgba($snow, 1) 40%, rgba($snow, 1) 60%, rgba($ash, 1) 90%);
   -webkit-transform: skewY(-12deg);
   -moz-transform: skewY(-12deg);
   -ms-transform: skewY(-12deg);
@@ -603,12 +723,11 @@ h3 {
 
 .featuresNav {
   @extend .mt-md-5;
-  @extend .mb-3;
+  @extend .mb-4;
   @extend .mb-md-0;
   font-size: $mediumFont;
   @extend .text-center;
   @extend .mr-md-3;
-  //@extend .justify-content-center;
 
   @include media-breakpoint-between(xs, sm) {
     //display: none;
@@ -697,23 +816,18 @@ h3 {
 
 .footerSkew {
   background: linear-gradient(50deg, $plum 10%, $disco 100%);
-  -webkit-transform: skewY(-12deg);
-  -moz-transform: skewY(-12deg);
-  -ms-transform: skewY(-12deg);
-  -o-transform: skewY(-12deg);
-  transform: skewY(-12deg);
-  filter: saturate(120%) contrast(110%);
-  @extend .d-flex;
 
+  //transform: skewY(-12deg);
+  filter: saturate(120%) contrast(110%);
+  //@extend .d-flex;
+  height: 100%;
 }
 
 .footer {
   @extend .justify-content-center;
   @extend .d-flex;
-  @extend .py-5;
-  -webkit-transform: skewY(12deg);
-  -moz-transform: skewY(12deg);
-  -ms-transform: skewY(12deg);
-  -o-transform: skewY(12deg);
-  transform: skewY(12deg);
+  height: 100%;
+  //@extend .py-5;
+
+  //transform: skewY(12deg);
 }

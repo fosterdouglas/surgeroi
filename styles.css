@@ -5175,7 +5175,7 @@ button.bg-grey:focus {
 .d-table-cell {
   display: table-cell !important; }
 
-.d-flex, .welcome, .bannerSkew, .banner, .hero, .hero > div, .sectionSkew, .section, .footerSkew, .footer {
+.d-flex, .welcome, .bannerSkew, .banner, .hero, .hero > div, .sectionSkew, .section, .footer {
   display: flex !important; }
 
 .d-inline-flex {
@@ -5747,10 +5747,10 @@ button.bg-grey:focus {
 .position-static {
   position: static !important; }
 
-.position-relative, .highlightText-Lift, .highlightText-Wave, .highlightText-Wave ~ h2, .highlightText-Star ~ h2, .highlightText-Circle, .highlightText-Circle ~ h2, .nav-pills .nav-link h3, .highlightText-Underline {
+.position-relative, .highlightImg, .highlightText-Lift, .highlightText-Wave, .highlightText-Wave ~ h2, .highlightText-Star ~ h2, .highlightText-Bulb ~ h2, .highlightText-Circle, .highlightText-Circle ~ h2, .nav-pills .nav-link h3, .highlightText-Underline {
   position: relative !important; }
 
-.position-absolute, .welcome, .lift, .wave, .star, .circle, .underline {
+.position-absolute, .welcome, .subImg, .lift, .wave, .star, .bulb, .circle, .underline {
   position: absolute !important; }
 
 .position-fixed {
@@ -5804,7 +5804,7 @@ button.bg-grey:focus {
 .shadow {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; }
 
-.shadow-lg, .btn-secondary:hover, .btn-light:hover, .btn-outline-light:hover, .btn-plum:hover, .welcome, .card > img {
+.shadow-lg, .btn-secondary:hover, .btn-light:hover, .btn-outline-light:hover, .btn-plum:hover, .welcome, .bannerSkew, .img, .subImg {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important; }
 
 .shadow-none, .btn-secondary:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled):active {
@@ -5813,10 +5813,10 @@ button.bg-grey:focus {
 .w-25 {
   width: 25% !important; }
 
-.w-50 {
+.w-50, .logoSm img {
   width: 50% !important; }
 
-.w-75, .supportText {
+.w-75 {
   width: 75% !important; }
 
 .w-100, .logo img {
@@ -5828,7 +5828,7 @@ button.bg-grey:focus {
 .h-25 {
   height: 25% !important; }
 
-.h-50 {
+.h-50, .logoSm img {
   height: 50% !important; }
 
 .h-75 {
@@ -5945,7 +5945,7 @@ button.bg-grey:focus {
 .mx-3 {
   margin-right: 1rem !important; }
 
-.mb-3, .cardText, .featuresNav, .features h2,
+.mb-3, .cardText, .features h2,
 .my-3 {
   margin-bottom: 1rem !important; }
 
@@ -5965,7 +5965,7 @@ button.bg-grey:focus {
 .nav-pills .nav-link {
   margin-right: 1.5rem !important; }
 
-.mb-4,
+.mb-4, .featuresNav,
 .my-4 {
   margin-bottom: 1.5rem !important; }
 
@@ -6103,8 +6103,7 @@ button.bg-grey:focus {
 
 .pt-5,
 .py-5,
-.sectionSkew,
-.footer {
+.sectionSkew {
   padding-top: 3rem !important; }
 
 .pr-5,
@@ -6114,8 +6113,7 @@ button.bg-grey:focus {
 
 .pb-5,
 .py-5,
-.sectionSkew,
-.footer {
+.sectionSkew {
   padding-bottom: 3rem !important; }
 
 .pl-5,
@@ -6227,8 +6225,7 @@ button.bg-grey:focus {
 
 .mr-auto,
 .mx-auto,
-.cardTwo h2,
-.supportText,
+.cardFour h2,
 .section {
   margin-right: auto !important; }
 
@@ -6236,10 +6233,9 @@ button.bg-grey:focus {
 .my-auto {
   margin-bottom: auto !important; }
 
-.ml-auto,
+.ml-auto, .logoSm,
 .mx-auto,
-.cardTwo h2,
-.supportText,
+.cardFour h2,
 .section {
   margin-left: auto !important; }
 
@@ -7284,7 +7280,7 @@ button.bg-grey:focus {
 .text-right {
   text-align: right !important; }
 
-.text-center, .cardTwo h2, .cardText, .titleText, .featuresNav, .features h2 {
+.text-center, .cardTwo h2, .cardFour h2, .cardText, .titleText, .supportText, .featuresNav, .features h2 {
   text-align: center !important; }
 
 @media (min-width: 576px) {
@@ -7621,22 +7617,49 @@ h3 {
   display: flex; }
 
 .boltPattern {
-  position: fixed;
+  position: absolute;
   background-blend-mode: color-burn;
   mix-blend-mode: color-burn;
   z-index: 1;
   height: 100%;
-  width: 100%;
+  width: 200%;
   background-image: url("assets/images/bolt-snow.svg");
   background-repeat: repeat;
-  background-size: 5rem;
+  background-size: 8rem;
   overflow: hidden;
   opacity: .3;
   pointer-events: none;
-  transform: rotateZ(360deg); }
+  animation: animatedBackground 70s linear 1; }
+
+.boltPattern2 {
+  position: absolute;
+  background-blend-mode: color-burn;
+  mix-blend-mode: color-burn;
+  z-index: 1;
+  height: 23%;
+  width: 200%;
+  background-image: url("assets/images/bolt-snow.svg");
+  background-repeat: repeat;
+  background-size: 4.8rem;
+  overflow: hidden;
+  opacity: .3;
+  pointer-events: none;
+  animation: animatedBackground 70s linear infinite; }
+
+@keyframes animatedBackground {
+  from {
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%); }
+  to {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%); } }
 
 .logo {
   padding: 0.5rem 0;
+  pointer-events: none; }
+
+.logoSm {
+  padding: 3rem 3rem;
   pointer-events: none; }
 
 .hero {
@@ -7648,25 +7671,40 @@ h3 {
     .hero {
       margin-top: 0; } }
 
-@keyframes animatedBackground {
-  from {
-    background-position: 0 0; }
-  to {
-    background-position: 100% 0; } }
-
 .card {
-  width: 70%;
+  width: 60%;
   height: auto;
   z-index: 7;
   background-color: transparent; }
 
-.card > img {
+.blur {
+  filter: blur(1.5px); }
+
+.highlightImg {
+  width: 100%; }
+
+.img {
   width: 100%;
-  border-radius: 1rem; }
+  border-radius: 0.25rem; }
+  @media (min-width: 768px) {
+    .img {
+      border-radius: 1rem; } }
+
+.subImg {
+  border-radius: 0.25rem;
+  top: -4%;
+  left: 70%;
+  width: 40% !important; }
+  @media (min-width: 768px) {
+    .subImg {
+      border-radius: 1rem; } }
+
+.subImg2 {
+  top: 17%; }
 
 .cardOne {
-  margin-top: -100px;
-  margin-left: 12%;
+  margin-top: -70px;
+  margin-left: 18%;
   margin-bottom: 8rem; }
   @media (max-width: 575.98px) {
     .cardOne {
@@ -7677,7 +7715,7 @@ h3 {
       margin-bottom: 7rem; } }
 
 .cardTwo {
-  margin-left: 20%;
+  margin-left: 28%;
   margin-top: 0px;
   margin-bottom: 17rem; }
   @media (max-width: 575.98px) {
@@ -7687,17 +7725,28 @@ h3 {
     .cardTwo {
       margin-bottom: 13rem; } }
 
-.cardTwo h2 {
-  width: 75%; }
-  @media (min-width: 576px) {
-    .cardTwo h2 {
-      width: 40%; } }
-  @media (min-width: 768px) {
-    .cardTwo h2 {
-      width: 100%; } }
+@media (min-width: 768px) {
+  .cardTwo h2 {
+    margin-bottom: 1rem; } }
 
 .cardThree {
-  margin-left: 12%; }
+  margin-left: 22%; }
+  @media (max-width: 575.98px) {
+    .cardThree {
+      margin-bottom: 7rem; } }
+  @media (min-width: 576px) and (max-width: 1199.98px) {
+    .cardThree {
+      margin-bottom: 13rem; } }
+  @media (min-width: 1200px) {
+    .cardThree {
+      margin-bottom: 9rem; } }
+
+.cardFour {
+  margin-left: 28%;
+  margin-top: 0px; }
+
+.cardFour h2 {
+  width: 75%; }
 
 .highlightText-Lift {
   vertical-align: super; }
@@ -7709,12 +7758,8 @@ h3 {
 
 .wave {
   width: 5000%;
-  margin-top: 3.5rem;
-  margin-left: -5.1rem; }
-  @media (max-width: 767.98px) {
-    .wave {
-      margin-left: -5.7rem;
-      margin-top: 6.4rem; } }
+  margin-left: -5.7rem;
+  margin-top: 6.4rem; }
 
 .star {
   width: 78px;
@@ -7724,7 +7769,15 @@ h3 {
     .star {
       margin-left: 2.5rem; } }
 
-.boltOne, .boltTwo, .boltThree {
+.bulb {
+  width: 58px;
+  margin-left: -5.95rem;
+  margin-top: .35rem; }
+
+.supportText {
+  margin-bottom: 1.5rem; }
+
+.boltOne, .boltTwo, .boltThree, .boltFour {
   position: relative;
   pointer-events: none; }
 
@@ -7757,7 +7810,7 @@ h3 {
 .boltTwo > img {
   top: -180px;
   position: absolute;
-  left: 40%;
+  left: 45%;
   transform: rotate(60deg) scaleY(-1); }
   @media (max-width: 575.98px) {
     .boltTwo > img {
@@ -7770,20 +7823,22 @@ h3 {
       height: 900px; } }
   @media (min-width: 768px) and (max-width: 991.98px) {
     .boltTwo > img {
-      top: -130px;
+      top: -50px;
       height: 1100px; } }
   @media (min-width: 992px) and (max-width: 1199.98px) {
     .boltTwo > img {
+      top: -110px;
       height: 1300px; } }
   @media (min-width: 1200px) {
     .boltTwo > img {
-      height: 1500px; } }
+      height: 1500px;
+      top: -140px; } }
 
 .boltThree > img {
   top: -240px;
   position: absolute;
-  left: -30%;
-  transform: rotate(314deg) scaleX(-1); }
+  left: -35%;
+  transform: rotate(80deg) scaleX(-1); }
   @media (max-width: 575.98px) {
     .boltThree > img {
       top: 50px;
@@ -7795,15 +7850,43 @@ h3 {
       height: 900px; } }
   @media (min-width: 768px) and (max-width: 991.98px) {
     .boltThree > img {
-      top: -180px;
+      top: -200px;
       height: 1100px; } }
   @media (min-width: 992px) and (max-width: 1199.98px) {
     .boltThree > img {
-      top: -200px;
+      top: -280px;
       height: 1300px; } }
   @media (min-width: 1200px) {
     .boltThree > img {
-      height: 1500px; } }
+      height: 1500px;
+      top: -400px; } }
+
+.boltFour > img {
+  top: -180px;
+  position: absolute;
+  left: 50%;
+  transform: rotate(60deg) scaleY(-1); }
+  @media (max-width: 575.98px) {
+    .boltFour > img {
+      top: 0px;
+      height: 600px;
+      left: 47%; } }
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .boltFour > img {
+      top: -100px;
+      height: 900px; } }
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .boltFour > img {
+      top: -150px;
+      height: 1100px; } }
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .boltFour > img {
+      height: 1300px;
+      top: -230px; } }
+  @media (min-width: 1200px) {
+    .boltFour > img {
+      height: 1500px;
+      top: -300px; } }
 
 .circle {
   width: 90px;
@@ -7814,15 +7897,15 @@ h3 {
       margin-left: -7.3rem; } }
 
 .cta {
-  margin-top: 18rem;
+  margin-top: 15rem;
   margin-bottom: 8rem; }
   @media (max-width: 575.98px) {
     .cta {
-      margin-top: 14rem;
-      margin-bottom: 6rem; } }
+      margin-top: 8rem;
+      margin-bottom: 7rem; } }
 
 .sectionSkew {
-  background: linear-gradient(60deg, #e3e3e3 0%, #ededed 35%, #ededed 40%, #ededed 65%, #e3e3e3 120%);
+  background: linear-gradient(60deg, #e3e3e3 0%, #ededed 35%, #ededed 40%, #ededed 60%, #e3e3e3 90%);
   -webkit-transform: skewY(-12deg);
   -moz-transform: skewY(-12deg);
   -ms-transform: skewY(-12deg);
@@ -7891,16 +7974,8 @@ h3 {
 
 .footerSkew {
   background: linear-gradient(50deg, #812A80 10%, #9F1F64 100%);
-  -webkit-transform: skewY(-12deg);
-  -moz-transform: skewY(-12deg);
-  -ms-transform: skewY(-12deg);
-  -o-transform: skewY(-12deg);
-  transform: skewY(-12deg);
-  filter: saturate(120%) contrast(110%); }
+  filter: saturate(120%) contrast(110%);
+  height: 100%; }
 
 .footer {
-  -webkit-transform: skewY(12deg);
-  -moz-transform: skewY(12deg);
-  -ms-transform: skewY(12deg);
-  -o-transform: skewY(12deg);
-  transform: skewY(12deg); }
+  height: 100%; }
