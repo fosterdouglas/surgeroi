@@ -5801,10 +5801,10 @@ button.bg-grey:focus {
 .shadow-sm, .btn-secondary, .btn-light, .btn-plum {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important; }
 
-.shadow {
+.shadow, .btn-secondary:hover, .btn-light:hover, .btn-outline-light:hover, .btn-plum:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; }
 
-.shadow-lg, .btn-secondary:hover, .btn-light:hover, .btn-outline-light:hover, .btn-plum:hover, .welcome, .bannerSkew, .img, .subImg {
+.shadow-lg, .welcome, .bannerSkew, .img, .subImg {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important; }
 
 .shadow-none, .btn-secondary:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled):active {
@@ -7538,7 +7538,7 @@ h2 {
 
 h3 {
   font-weight: 200;
-  font-size: 1.5rem; }
+  font-size: 1.25rem; }
 
 .btn-lg, .btn-group-lg > .btn, .btn {
   border-radius: 3rem;
@@ -7572,7 +7572,8 @@ h3 {
   text-transform: uppercase; }
 
 .btn-light:hover {
-  background: #EDEDED;
+  background: #F4B945;
+  color: #9F1F64;
   text-decoration: none; }
 
 .btn-outline-light:hover {
@@ -7670,19 +7671,19 @@ h3 {
 
 .logoSm {
   pointer-events: none;
-  padding: 0.25rem; }
+  padding: 0.25rem 2%; }
   @media (min-width: 576px) and (max-width: 767.98px) {
     .logoSm {
-      padding: 0.25rem 1rem; } }
+      padding: 0 4%; } }
   @media (min-width: 768px) and (max-width: 991.98px) {
     .logoSm {
-      padding: 1rem 2.5rem; } }
+      padding: 0 5.25%; } }
   @media (min-width: 992px) and (max-width: 1199.98px) {
     .logoSm {
-      padding: 1.5rem 3.5rem; } }
+      padding: 0 5.75%; } }
   @media (min-width: 1200px) {
     .logoSm {
-      padding: 1.5rem 4.25rem; } }
+      padding: 0 6%; } }
 
 .hero {
   text-align: left;
@@ -7775,9 +7776,9 @@ h3 {
   vertical-align: super; }
 
 .lift {
-  width: 150%;
-  margin-top: .7rem;
-  margin-left: -3.7rem; }
+  width: 115%;
+  margin-top: -0.4rem;
+  margin-left: -4.3rem; }
 
 .wave {
   width: 5000%;
@@ -7799,6 +7800,8 @@ h3 {
 
 .supportText {
   margin-bottom: 1.5rem; }
+  .supportText h3 {
+    font-size: 1.25rem; }
 
 .boltOne, .boltTwo, .boltThree, .boltFour {
   position: relative;
@@ -7946,7 +7949,7 @@ h3 {
   transform: skewY(12deg); }
 
 .features {
-  height: auto;
+  min-height: 400px;
   text-align: justify;
   margin: 5rem 0; }
 
@@ -8002,18 +8005,14 @@ h3 {
 
 .footer {
   padding: 1.5rem; }
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    .footer {
-      padding: 0.5rem; } }
-  @media (min-width: 992px) {
-    .footer {
-      padding: 0; } }
 
 .footerText {
   margin-top: 0.25rem;
-  color: #EDEDED; }
+  color: #EDEDED;
+  padding-left: 0; }
   .footerText h5 {
-    font-weight: 200; }
+    font-weight: 200;
+    font-size: 100%; }
     .footerText h5 a {
       color: #E3E3E3;
       font-weight: 600;
@@ -8025,28 +8024,25 @@ h3 {
 .footerMenu {
   margin-top: 0.25rem;
   padding-right: 1.5rem;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
   color: #EDEDED;
   text-align: right; }
-  @media (min-width: 576px) and (max-width: 767.98px) {
+  @media (min-width: 768px) {
     .footerMenu {
-      padding-right: 1rem; } }
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    .footerMenu {
-      padding-right: 0.5rem;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem; } }
-  @media (min-width: 992px) and (max-width: 1199.98px) {
-    .footerMenu {
-      padding-right: 0.25rem;
-      padding-top: 1rem;
-      padding-bottom: 1rem; } }
-  @media (min-width: 1200px) {
-    .footerMenu {
-      padding-right: 0;
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem; } }
+      padding-right: 0; } }
   .footerMenu h5 {
-    font-weight: 200; }
+    font-weight: 200;
+    font-size: 100%; }
+    @media (min-width: 576px) {
+      .footerMenu h5 {
+        margin-right: -1rem; } }
+    @media (min-width: 992px) {
+      .footerMenu h5 {
+        margin-right: -1.5rem !important; } }
+    @media (min-width: 1200px) {
+      .footerMenu h5 {
+        margin-right: -3rem !important; } }
     .footerMenu h5 a {
       color: #E3E3E3; }
       .footerMenu h5 a:hover {

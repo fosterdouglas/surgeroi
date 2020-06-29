@@ -19,6 +19,7 @@ $baseWeight: 300;
 $boldWeight: 600;
 
 $baseFont: 1rem;
+$smallFont: 1.25rem;
 $mediumFont: 1.5rem;
 $largeFont: 2.5rem;
 $massiveFont: 3rem;
@@ -111,7 +112,7 @@ h2 {
 
 h3 {
   font-weight: $thinWeight;
-  font-size: $mediumFont;
+  font-size: $smallFont;
 }
 
 
@@ -148,7 +149,7 @@ h3 {
   color: $snow;
   background-blend-mode: multiply;
   background-size: 7rem;
-  @extend .shadow-lg;
+  @extend .shadow;
   transition: all .45s;
 }
 
@@ -167,8 +168,9 @@ h3 {
 }
 
 .btn-light:hover {
-  @extend .shadow-lg;
-  background: $snow;
+  @extend .shadow;
+  background: $golden;
+  color: $disco;
   text-decoration: none;
 }
 
@@ -181,7 +183,7 @@ h3 {
 }
 
 .btn-outline-light:hover {
-  @extend .shadow-lg;
+  @extend .shadow;
   text-decoration: none;
 }
 
@@ -201,7 +203,7 @@ h3 {
 
 .btn-plum:hover {
   background: linear-gradient(50deg, $plum 5%, $disco 70%, $disco 100%);
-  @extend .shadow-lg;
+  @extend .shadow;
   transition: all .35s;
 }
 
@@ -323,21 +325,21 @@ h3 {
 .logoSm {
   @extend .ml-auto;
   pointer-events: none;
-  padding: $sp1;
+  padding: $sp1 2%;
   //margin-left: $sp3;
 
   @include media-breakpoint-only(sm) {
-    padding: $sp1 $sp3;
+    padding: 0 4%;
 
   }
   @include media-breakpoint-only(md) {
-    padding: $sp3 2.5rem;
+    padding: 0 5.25%;
   }
   @include media-breakpoint-only(lg) {
-    padding: $sp4 3.5rem;
+    padding: 0 5.75%;
   }
   @include media-breakpoint-only(xl) {
-    padding: $sp4 4.25rem;
+    padding: 0 6%;
   }
 }
 
@@ -500,9 +502,9 @@ h3 {
 
 .lift {
   @extend .position-absolute;
-  width: 150%;
-  margin-top: .7rem;
-  margin-left: -3.7rem;
+  width: 115%;
+  margin-top: -0.4rem;
+  margin-left: -4.3rem;
 }
 
 .highlightText-Wave {
@@ -551,6 +553,11 @@ h3 {
 .supportText {
   @extend .text-center;
   margin-bottom: $sp4;
+
+
+  h3 {
+    font-size: $smallFont;
+  }
 }
 
 
@@ -740,9 +747,11 @@ h3 {
 }
 
 .features {
-  height: auto;
+  min-height: 400px;
   text-align: justify;
   margin: $sp7 0;
+
+
 }
 
 .featuresNav {
@@ -854,23 +863,16 @@ h3 {
   //@extend .py-5;
   padding: $sp4;
 
-  //transform: skewY(12deg);
-  @include media-breakpoint-only(md) {
-    //padding: $sp4 0;
-    padding: $sp2;
-  }
-  @include media-breakpoint-up(lg) {
-    //padding: $sp4 0;
-    padding: 0;
-  }
 }
 
 .footerText {
   margin-top: $sp1;
   color: $snow;
+  padding-left:0;
 
   h5 {
     font-weight: $thinWeight;
+    font-size: 100%;
 
     a {
       color: $ash;
@@ -888,30 +890,31 @@ h3 {
 .footerMenu {
   margin-top: $sp1;
   padding-right: $sp4;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
   color: $snow;
   text-align: right;
 
-  @include media-breakpoint-only(sm) {
-    padding-right: $sp3;
-  }
-  @include media-breakpoint-only(md) {
-    padding-right: $sp2;
-    padding-top: $sp2;
-    padding-bottom: $sp2;
-  }
-  @include media-breakpoint-only(lg) {
-    padding-right: $sp1;
-    padding-top: $sp3;
-    padding-bottom: $sp3;
-  }
-  @include media-breakpoint-only(xl) {
+
+  @include media-breakpoint-up(md) {
     padding-right: 0;
-    padding-top: $sp4;
-    padding-bottom: $sp4;
   }
 
   h5 {
     font-weight: $thinWeight;
+    font-size: 100%;
+
+    @include media-breakpoint-up(sm) {
+      margin-right: -$sp3;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-right: -$sp4 !important;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-right: -$sp5 !important;
+    }
 
     a {
       color: $ash;
