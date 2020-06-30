@@ -5175,7 +5175,7 @@ button.bg-grey:focus {
 .d-table-cell {
   display: table-cell !important; }
 
-.d-flex, .welcome, .bannerSkew, .banner, .hero > div, .sectionSkew, .section {
+.d-flex, .welcome, .bannerSkew, .banner, .sectionSkew, .section {
   display: flex !important; }
 
 .d-inline-flex {
@@ -5747,10 +5747,10 @@ button.bg-grey:focus {
 .position-static {
   position: static !important; }
 
-.position-relative, .highlightImg, .highlightText-Lift, .highlightText-Wave, .highlightText-Wave ~ h2, .highlightText-Star ~ h2, .highlightText-Bulb ~ h2, .highlightText-Circle, .highlightText-Circle ~ h2, .nav-pills .nav-link h3, .highlightText-Underline {
+.position-relative, .highlightImg, .subImg4, .highlightText-Lift, .highlightText-Wave, .highlightText-Wave ~ h2, .highlightText-Star ~ h2, .highlightText-Bulb ~ h2, .highlightText-Circle, .highlightText-Circle ~ h2, .nav-pills .nav-link h3, .highlightText-Underline {
   position: relative !important; }
 
-.position-absolute, .welcome, .subImg, .lift, .wave, .star, .bulb, .circle, .underline {
+.position-absolute, .welcome, .subImg, .subImg3, .lift, .wave, .star, .bulb, .circle, .underline {
   position: absolute !important; }
 
 .position-fixed {
@@ -5801,10 +5801,10 @@ button.bg-grey:focus {
 .shadow-sm, .btn-secondary, .btn-light, .btn-plum {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important; }
 
-.shadow, .btn-secondary:hover, .btn-light:hover, .btn-outline-light:hover, .btn-plum:hover {
+.shadow, .btn-secondary:hover, .btn-light:hover, .btn-outline-light:hover, .btn-plum:hover, .subImg, .subImg4 {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; }
 
-.shadow-lg, .welcome, .bannerSkew, .img, .subImg {
+.shadow-lg, .welcome, .bannerSkew, .highlightImg .img {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important; }
 
 .shadow-none, .btn-secondary:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled):active {
@@ -7512,6 +7512,9 @@ body {
   background: #EDEDED;
   overflow-x: hidden; }
 
+.overflow {
+  overflow-x: hidden; }
+
 .content {
   padding-left: 4rem;
   padding-right: 4rem; }
@@ -7555,11 +7558,23 @@ h3 {
   background-blend-mode: multiply;
   transition: all .35s; }
 
+@-moz-document url-prefix() {
+  .btn-secondary {
+    background-size: 0rem !important;
+    background-image: none !important; } }
+
 .btn-secondary:hover {
   color: #EDEDED;
   background-blend-mode: multiply;
   background-size: 7rem;
-  transition: all .45s; }
+  transition: all .45s;
+  text-decoration: none; }
+
+@-moz-document url-prefix() {
+  .btn-secondary:hover {
+    transition: all 0.3s !important;
+    background-size: 0rem !important;
+    background-blend-mode: none !important; } }
 
 .btn-secondary:not(:disabled):not(.disabled):active {
   color: #383838;
@@ -7567,13 +7582,13 @@ h3 {
   background-size: 8rem; }
 
 .btn-light {
-  color: #383838;
+  color: #9F1F64;
   font-weight: 600;
   text-transform: uppercase; }
 
 .btn-light:hover {
-  background: #F4B945;
-  color: #9F1F64;
+  background: #9F1F64;
+  color: white;
   text-decoration: none; }
 
 .btn-outline-light:hover {
@@ -7594,11 +7609,17 @@ h3 {
   background: linear-gradient(90deg, #9F1F64 5%, #812A80 70%, #812A80 100%);
   top: 0px;
   z-index: 20;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  text-align: center; }
+  @media (max-width: 575.98px) {
+    .welcome {
+      padding: 2.25rem; } }
 
 @-moz-document url-prefix() {
   .skew {
-    filter: saturate(100%) contrast(100%) !important; } }
+    filter: saturate(100%) contrast(100%) !important; }
+  .boltPattern, .boltPattern2 {
+    animation: none 0s linear infinite !important; } }
 
 .bannerSkew {
   background: linear-gradient(50deg, #812A80 10%, #9F1F64 100%);
@@ -7609,7 +7630,8 @@ h3 {
   -o-transform: skewY(-12deg);
   transform: skewY(-12deg);
   filter: saturate(120%) contrast(110%);
-  margin-bottom: 220px; }
+  margin-bottom: 220px;
+  padding: 0 !important; }
 
 .banner {
   margin-bottom: 1.5rem;
@@ -7642,21 +7664,6 @@ h3 {
   pointer-events: none;
   animation: animatedBackground 70s linear 1; }
 
-.boltPattern2 {
-  position: absolute;
-  background-blend-mode: color-burn;
-  mix-blend-mode: color-burn;
-  z-index: 1;
-  height: 23%;
-  width: 200%;
-  background-image: url("assets/images/bolt-snow.svg");
-  background-repeat: repeat;
-  background-size: 4.8rem;
-  overflow: hidden;
-  opacity: .3;
-  pointer-events: none;
-  animation: animatedBackground 70s linear infinite; }
-
 @keyframes animatedBackground {
   from {
     transform: translateX(-50%);
@@ -7668,6 +7675,9 @@ h3 {
 .logo {
   padding: 0.5rem 0;
   pointer-events: none; }
+  @media (max-width: 575.98px) {
+    .logo {
+      margin-top: 2rem; } }
 
 .logoSm {
   pointer-events: none;
@@ -7689,34 +7699,39 @@ h3 {
   text-align: left;
   color: #EDEDED;
   margin-top: 3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   padding: 1.5rem 0; }
-  @media (max-width: 575.98px) {
-    .hero {
-      margin-top: 0; } }
 
 .card {
   width: 60%;
   height: auto;
   z-index: 7;
   background-color: transparent; }
+  @media (max-width: 575.98px) {
+    .card {
+      width: 78% !important; } }
 
 .blur {
   filter: blur(1.5px); }
 
 .highlightImg {
   width: 100%; }
+  .highlightImg .img {
+    width: 100%;
+    border-radius: 0.25rem; }
+    @media (min-width: 768px) {
+      .highlightImg .img {
+        border-radius: 1rem; } }
 
-.img {
-  width: 100%;
-  border-radius: 0.25rem; }
-  @media (min-width: 768px) {
-    .img {
-      border-radius: 1rem; } }
+.fullwidthImg {
+  width: 300%;
+  text-align: center;
+  margin-left: -60vw;
+  position: relative; }
 
 .subImg {
   border-radius: 0.25rem;
-  top: -4%;
+  top: -2%;
   left: 70%;
   width: 40% !important; }
   @media (min-width: 768px) {
@@ -7726,48 +7741,49 @@ h3 {
 .subImg2 {
   top: 17%; }
 
+.subImg3 {
+  left: -5%;
+  top: 3%; }
+
+.subImg4 {
+  margin-top: 0.5rem;
+  width: 65% !important; }
+
 .cardOne {
-  margin-top: -70px;
+  margin-top: -100px;
   margin-left: 19.5%;
-  margin-bottom: 8rem; }
+  margin-bottom: 6rem; }
   @media (max-width: 575.98px) {
     .cardOne {
       margin-top: -140px;
-      margin-bottom: 5rem; } }
-  @media (min-width: 576px) and (max-width: 1199.98px) {
-    .cardOne {
-      margin-bottom: 7rem; } }
+      margin-left: 7%;
+      margin-bottom: 4rem; } }
 
 .cardTwo {
   margin-left: 19.5%;
-  margin-top: 0px;
-  margin-bottom: 17rem; }
+  margin-top: 0px; }
   @media (max-width: 575.98px) {
     .cardTwo {
-      margin-bottom: 7rem; } }
-  @media (min-width: 576px) and (max-width: 1199.98px) {
+      margin-bottom: 4rem;
+      margin-left: 11%; } }
+  @media (min-width: 576px) {
     .cardTwo {
-      margin-bottom: 13rem; } }
-
-@media (min-width: 768px) {
-  .cardTwo h2 {
-    margin-bottom: 1rem; } }
+      margin-bottom: 5rem; } }
 
 .cardThree {
-  margin-left: 19.5%; }
+  margin-left: 19.5%;
+  margin-bottom: 6rem; }
   @media (max-width: 575.98px) {
     .cardThree {
-      margin-bottom: 7rem; } }
-  @media (min-width: 576px) and (max-width: 1199.98px) {
-    .cardThree {
-      margin-bottom: 13rem; } }
-  @media (min-width: 1200px) {
-    .cardThree {
-      margin-bottom: 9rem; } }
+      margin-left: 11%;
+      margin-bottom: 4rem; } }
 
 .cardFour {
   margin-left: 19.5%;
   margin-top: 0px; }
+  @media (max-width: 575.98px) {
+    .cardFour {
+      margin-left: 11%; } }
 
 .cardFour h2 {
   width: 75%; }
@@ -7781,14 +7797,17 @@ h3 {
   margin-left: -4.3rem; }
 
 .wave {
-  width: 5000%;
-  margin-left: -5.7rem;
-  margin-top: 6.4rem; }
+  width: 5600%;
+  margin-left: -14.2rem;
+  margin-top: 3.6rem; }
+  @media (max-width: 575.98px) {
+    .wave {
+      margin-left: -6.5rem; } }
 
 .star {
   width: 78px;
   margin-top: 0.3rem;
-  margin-left: -4rem; }
+  margin-left: -3.95rem; }
   @media (max-width: 767.98px) {
     .star {
       margin-left: 2.5rem; } }
@@ -7799,7 +7818,7 @@ h3 {
   margin-top: .35rem; }
 
 .supportText {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 0.5rem; }
   .supportText h3 {
     font-size: 1.25rem; }
 
@@ -7814,7 +7833,7 @@ h3 {
   z-index: -3; }
   @media (max-width: 575.98px) {
     .boltOne > img {
-      top: 0px;
+      top: -20px;
       height: 600px;
       left: -44%; } }
   @media (min-width: 576px) and (max-width: 767.98px) {
@@ -7915,20 +7934,22 @@ h3 {
       top: -300px; } }
 
 .circle {
-  width: 90px;
-  margin-top: .3rem;
-  margin-left: -14.3rem; }
+  width: 75px;
+  margin-top: .8rem;
+  margin-left: -12.7rem; }
   @media (max-width: 575.98px) {
     .circle {
-      margin-left: -7.3rem; } }
+      margin-left: -5.3rem; } }
 
 .cta {
-  margin-top: 15rem;
-  margin-bottom: 8rem; }
+  margin-top: 8rem;
+  margin-bottom: 6rem;
+  background: #E3E3E3;
+  padding: 1rem 0; }
   @media (max-width: 575.98px) {
     .cta {
       margin-top: 8rem;
-      margin-bottom: 7rem; } }
+      margin-bottom: 6rem; } }
 
 .sectionSkew {
   background: linear-gradient(60deg, #e3e3e3 0%, #ededed 35%, #ededed 40%, #ededed 60%, #e3e3e3 90%);
@@ -7949,9 +7970,20 @@ h3 {
   transform: skewY(12deg); }
 
 .features {
-  min-height: 400px;
   text-align: justify;
-  margin: 5rem 0; }
+  margin: 5rem 0 4rem 0; }
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .features {
+      min-height: 750px; } }
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .features {
+      min-height: 650px; } }
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .features {
+      min-height: 510px; } }
+  @media (min-width: 1200px) {
+    .features {
+      min-height: 550px; } }
 
 .featuresNav {
   font-size: 1.5rem; }
@@ -7994,17 +8026,35 @@ h3 {
   to {
     transform: scaleX(1); } }
 
-@media (max-width: 575.98px) {
-  .pricing {
-    display: none; } }
+.contactForm {
+  width: 50%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto; }
+  @media (max-width: 575.98px) {
+    .contactForm {
+      width: 80%; } }
+  .contactForm h1 {
+    margin: 1.5rem auto !important; }
+  .contactForm label {
+    text-align: left;
+    width: 100%;
+    margin-left: 1rem; }
+  .contactForm .form-control {
+    margin-left: auto;
+    margin-right: auto; }
+  .contactForm .btn {
+    width: 100%; }
 
 .footerSkew {
   background: linear-gradient(50deg, #812A80 10%, #9F1F64 100%);
   filter: saturate(120%) contrast(110%);
-  height: 100%; }
+  height: 100%;
+  padding: 0 !important; }
 
 .footer {
-  padding: 1.5rem; }
+  padding: 1.5rem;
+  margin-right: 0 !important; }
 
 .footerText {
   margin-top: 0.25rem;

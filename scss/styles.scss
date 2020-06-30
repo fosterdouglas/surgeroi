@@ -74,6 +74,10 @@ body {
   overflow-x:hidden;
 }
 
+.overflow {
+  overflow-x:hidden;
+}
+
 
 .content {
   padding-left: $sp6;
@@ -143,6 +147,12 @@ h3 {
   transition: all .35s;
   @extend .shadow-sm;
   @extend .noUserSelect;
+
+  @-moz-document url-prefix() {
+    //transition: none !important;
+    background-size: 0rem !important;
+    background-image: none !important;
+  }
 }
 
 .btn-secondary:hover {
@@ -151,6 +161,13 @@ h3 {
   background-size: 7rem;
   @extend .shadow;
   transition: all .45s;
+  text-decoration: none;
+
+  @-moz-document url-prefix() {
+    transition: all 0.3s !important;
+    background-size: 0rem !important;
+    background-blend-mode: none !important;
+  }
 }
 
 .btn-secondary:not(:disabled):not(.disabled):active {
@@ -161,7 +178,7 @@ h3 {
 }
 
 .btn-light {
-  color: $charcoal;
+  color: $disco;
   font-weight: $boldWeight;
   text-transform: uppercase;
   @extend .shadow-sm;
@@ -169,8 +186,8 @@ h3 {
 
 .btn-light:hover {
   @extend .shadow;
-  background: $golden;
-  color: $disco;
+  background: $disco;
+  color: white;
   text-decoration: none;
 }
 
@@ -224,11 +241,19 @@ h3 {
   @extend .justify-content-center;
   @extend .d-flex;
   @extend .noUserSelect;
+  text-align: center;
+
+  @include media-breakpoint-only(xs) {
+    padding: 2.25rem;
+  }
 }
 
 @-moz-document url-prefix() {
   .skew {
     filter: saturate(100%) contrast(100%) !important; //accounts for FireFox color difference
+  }
+  .boltPattern, .boltPattern2 {
+    animation: none 0s linear infinite !important;
   }
 }
 
@@ -244,6 +269,7 @@ h3 {
   @extend .d-flex;
   margin-bottom: 220px;
   @extend .shadow-lg;
+  padding: 0 !important;
 }
 
 .banner {
@@ -256,6 +282,8 @@ h3 {
   -ms-transform: skewY(12deg);
   -o-transform: skewY(12deg);
   transform: skewY(12deg);
+  //margin-right: 0 !important;
+  //padding-right: 0;
 
   @include media-breakpoint-up(lg) {
 
@@ -275,7 +303,6 @@ h3 {
     z-index: 1;
     height: 100%;
     width: 200%;
-    //left:0;
     background-image: url("assets/images/bolt-snow.svg");
     background-repeat: repeat;
     background-size: 8rem;
@@ -283,22 +310,6 @@ h3 {
     opacity: .3;
     pointer-events: none;
     animation: animatedBackground 70s linear 1;
-}
-
-.boltPattern2 {
-    position: absolute;
-    background-blend-mode: color-burn;
-    mix-blend-mode: color-burn;
-    z-index: 1;
-    height: 23%;
-    width: 200%;
-    background-image: url("assets/images/bolt-snow.svg");
-    background-repeat: repeat;
-    background-size: 4.8rem;
-    overflow: hidden;
-    opacity: .3;
-    pointer-events: none;
-    animation: animatedBackground 70s linear infinite;
 }
 
 @keyframes animatedBackground {
@@ -315,6 +326,11 @@ h3 {
 .logo {
   padding: $sp2 0;
   pointer-events: none;
+
+  @include media-breakpoint-only(xs) {
+
+    margin-top: 2rem;
+  }
 }
 
 .logo img {
@@ -343,32 +359,16 @@ h3 {
   }
 }
 
-.logoSm img {
-  //@extend .w-100;
-  //@extend .h-50;
-}
-
 .hero {
   //@extend .d-flex;
   //@extend .justify-content-center;
   text-align: left;
   color: $snow;
   margin-top: $sp5;
-  margin-bottom: $sp4;
+  margin-bottom: $sp3;
   padding: $sp4 0;
 
-  @include media-breakpoint-only(xs) {
-    margin-top: 0;
-  }
-
 }
-
-.hero > div {
-  @extend .d-flex;
-  //@extend .justify-content-start;
-}
-
-
 
 
 // // // // // // // // // // // // // // // // // // // // // // //
@@ -383,6 +383,10 @@ h3 {
   background-color: transparent;
   @extend .border-0;
 
+  @include media-breakpoint-only(xs) {
+    width: 78% !important;
+  }
+
 }
 
 .blur {
@@ -392,23 +396,36 @@ h3 {
 .highlightImg {
   width: 100%;
   @extend .position-relative;
-}
 
-.img {
-  width: 100%;
-  border-radius: $sp1;
-  @extend .shadow-lg;
+  .img {
+    width: 100%;
+    border-radius: $sp1;
+    @extend .shadow-lg;
 
-  @include media-breakpoint-up(md) {
-    border-radius: $sp3;
+    @include media-breakpoint-up(md) {
+      border-radius: $sp3;
+    }
   }
 }
+
+.fullwidthImg {
+  width: 300%;
+  text-align: center;
+  margin-left:-60vw;
+  position: relative;
+
+  .img {
+    //position: absolute;
+  }
+}
+
+
 
 .subImg {
   @extend .position-absolute;
   border-radius: $sp1;
-  @extend .shadow-lg;
-  top:-4%;
+  @extend .shadow;
+  top:-2%;
   left: 70%;
   width: 40% !important;
 
@@ -421,31 +438,48 @@ h3 {
   top:17%;
 }
 
+.subImg3 {
+  @extend .position-absolute;
+
+
+
+  left: -5%;
+  top: 3%;
+}
+
+.subImg4 {
+  @extend .position-relative;
+  @extend .shadow;
+  margin-top: $sp2;
+  width: 65% !important;
+}
+
 .cardOne {
-  margin-top: -70px;
+  margin-top: -100px;
   margin-left: 19.5%;
-  margin-bottom: 8rem;
+  margin-bottom: 6rem;
 
   @include media-breakpoint-only(xs) {
     margin-top: -140px;
-    margin-bottom: 5rem;
+    margin-left: 7%;
+    margin-bottom: 4rem;
   }
   @include media-breakpoint-between(sm, lg) {
-    margin-bottom: 7rem;
   }
 }
 
 .cardTwo {
   margin-left: 19.5%;
   margin-top: 0px;
-  margin-bottom: 17rem;
+  //margin-bottom: 10rem;
 
   @include media-breakpoint-only(xs) {
-    margin-bottom: 7rem;
+    margin-bottom: 4rem;
+    margin-left: 11%;
   }
 
-  @include media-breakpoint-between(sm, lg) {
-    margin-bottom: 13rem;
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 5rem;
   }
 }
 
@@ -453,23 +487,26 @@ h3 {
   @extend .text-center;
 
   @include media-breakpoint-up(md) {
-    margin-bottom: $sp3;
+    //margin-bottom: $sp2;
   }
 }
 
 .cardThree {
   margin-left: 19.5%;
+  margin-bottom: 6rem;
 
   @include media-breakpoint-only(xs) {
-    margin-bottom: 7rem;
+    //margin-bottom: 7rem;
+    margin-left: 11%;
+    margin-bottom: 4rem;
   }
 
   @include media-breakpoint-between(sm, lg) {
-    margin-bottom: 13rem;
+    //margin-bottom: 7rem;
   }
 
   @include media-breakpoint-up(xl) {
-    margin-bottom: 9rem;
+    //margin-bottom: 9rem;
   }
 }
 
@@ -477,6 +514,10 @@ h3 {
   margin-left: 19.5%;
   margin-top: 0px;
 
+  @include media-breakpoint-only(xs) {
+    //margin-bottom: 7rem;
+    margin-left: 11%;
+  }
 
 }
 
@@ -493,6 +534,14 @@ h3 {
 
 .titleText {
   @extend .text-center;
+
+  h2 {
+    @include media-breakpoint-only(xs) {
+      //font-size: 220%;
+    }
+  }
+
+
 }
 
 .highlightText-Lift {
@@ -513,9 +562,13 @@ h3 {
 
 .wave {
   @extend .position-absolute;
-  width: 5000%;
-  margin-left: -5.7rem;
-  margin-top: 6.4rem;
+  width: 5600%;
+  margin-left: -14.2rem;
+  margin-top: 3.6rem;
+
+  @include media-breakpoint-only(xs) {
+    margin-left: -6.5rem;
+  }
 }
 
 .highlightText-Wave ~ h2 {
@@ -526,7 +579,7 @@ h3 {
   @extend .position-absolute;
   width: 78px; //this one didnt work with percentage for some reason?
   margin-top: 0.3rem;
-  margin-left: -4rem;
+  margin-left: -3.95rem;
 
   @include media-breakpoint-between(xs, sm) {
     margin-left: 2.5rem;
@@ -552,7 +605,7 @@ h3 {
 
 .supportText {
   @extend .text-center;
-  margin-bottom: $sp4;
+  margin-bottom: $sp2;
 
 
   h3 {
@@ -573,7 +626,7 @@ h3 {
   z-index: -3; //sets the bolt behind the top banner
 
   @include media-breakpoint-only(xs) {
-    top:0px;
+    top:-20px;
     height: 600px;
     left: -44%;
   }
@@ -622,6 +675,7 @@ h3 {
     top: -140px;
   }
 }
+
 
 .boltThree > img {
   top: -240px;
@@ -692,12 +746,12 @@ h3 {
 
 .circle {
   @extend .position-absolute;
-  width: 90px;
-  margin-top: .3rem;
-  margin-left: -14.3rem;
+  width: 75px;
+  margin-top: .8rem;
+  margin-left: -12.7rem;
 
   @include media-breakpoint-only(xs) {
-    margin-left: -7.3rem;
+    margin-left: -5.3rem;
   }
 }
 
@@ -706,12 +760,14 @@ h3 {
 }
 
 .cta {
-  margin-top: 15rem;
-  margin-bottom: 8rem;
+  margin-top: 8rem;
+  margin-bottom: 6rem;
+  background: $ash;
+  padding: $sp3 0;
 
   @include media-breakpoint-only(xs) {
     margin-top: 8rem;
-    margin-bottom: 7rem;
+    margin-bottom: 6rem;
   }
 }
 
@@ -747,11 +803,25 @@ h3 {
 }
 
 .features {
-  min-height: 400px;
+
   text-align: justify;
-  margin: $sp7 0;
+  margin: $sp7 0 4rem 0;
 
+  @include media-breakpoint-only(sm) {
+    min-height: 750px;
+  }
 
+  @include media-breakpoint-only(md) {
+    min-height: 650px;
+  }
+
+  @include media-breakpoint-only(lg) {
+    min-height: 510px;
+  }
+
+  @include media-breakpoint-only(xl) {
+    min-height: 550px;
+  }
 }
 
 .featuresNav {
@@ -837,7 +907,40 @@ h3 {
 
 .pricing {
   @include media-breakpoint-only(xs) {
-    display: none;
+    //display: none;
+  }
+}
+
+.contactForm {
+  width: 50%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media-breakpoint-only(xs) {
+    width: 80%;
+  }
+
+  h1 {
+    margin: $sp4 auto !important;
+    //width: 30%;
+  }
+
+  label {
+    text-align: left;
+    width: 100%;
+    margin-left: 1rem;
+  }
+
+  .form-control {
+    //width: 30%;
+    //margin: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn {
+    width: 100%;
   }
 }
 
@@ -854,6 +957,7 @@ h3 {
   filter: saturate(120%) contrast(110%);
   //@extend .d-flex;
   height: 100%;
+  padding: 0 !important;
 }
 
 .footer {
@@ -862,6 +966,7 @@ h3 {
   //height: 100%;
   //@extend .py-5;
   padding: $sp4;
+  margin-right: 0 !important;
 
 }
 
