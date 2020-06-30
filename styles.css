@@ -7619,7 +7619,9 @@ h3 {
   .skew {
     filter: saturate(100%) contrast(100%) !important; }
   .boltPattern, .boltPattern2 {
-    animation: none 0s linear infinite !important; } }
+    animation: none 0s linear infinite !important; }
+  .highlightText-Wave {
+    display: none !important; } }
 
 .bannerSkew {
   background: linear-gradient(50deg, #812A80 10%, #9F1F64 100%);
