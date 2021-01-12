@@ -5,15 +5,15 @@
 // // // // // // // // // // // // // // // // // // // // // // //
 
 //COLOR VARIABLES
-$plum: #812A80;
-$disco: #9F1F64;
-$golden: #F4B945;
+$plum: #812a80;
+$disco: #9f1f64;
+$golden: #f4b945;
 $charcoal: #383838;
-$ash: #E3E3E3;
-$snow: #EDEDED;
+$ash: #e3e3e3;
+$snow: #ededed;
 
 //FONT VARIABLES
-$baseFamily: 'sofia-pro-condensed';
+$baseFamily: "sofia-pro-condensed";
 $thinWeight: 200;
 $baseWeight: 300;
 $boldWeight: 600;
@@ -25,14 +25,13 @@ $largeFont: 2.5rem;
 $massiveFont: 3rem;
 
 //SPACERS
-$sp1: .25rem;
-$sp2: .5rem;
+$sp1: 0.25rem;
+$sp2: 0.5rem;
 $sp3: 1rem;
 $sp4: 1.5rem;
 $sp5: 3rem;
 $sp6: 4rem;
 $sp7: 5rem;
-
 
 // // // // // // // // // // // // // // // // // // // // // // //
 //                                                                //
@@ -47,12 +46,10 @@ $theme-colors: (
   "secondary": $golden,
   "dark": $charcoal,
   "grey": $ash,
-  "light": $snow
+  "light": $snow,
 );
 
-@import 'bootstrap/scss/bootstrap.scss';
-
-
+@import "bootstrap/scss/bootstrap.scss";
 
 // // // // // // // // // // // // // // // // // // // // // // //
 //                                                                //
@@ -60,7 +57,6 @@ $theme-colors: (
 //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 html {
-
 }
 
 body {
@@ -71,13 +67,12 @@ body {
   -webkit-font-feature-settings: "salt";
   font-feature-settings: "salt";
   background: $snow;
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 
 .overflow {
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
-
 
 .content {
   padding-left: $sp6;
@@ -89,7 +84,6 @@ body {
   -ms-user-select: none; /* IE 10+ and Edge */
   user-select: none; /* Standard syntax */
 }
-
 
 // // // // // // // // // // // // // // // // // // // // // // //
 //                                                                //
@@ -119,19 +113,19 @@ h3 {
   font-size: $smallFont;
 }
 
-
 // // // // // // // // // // // // // // // // // // // // // // //
 //                                                                //
 //                            BUTTONS                             //
 //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
-.btn-lg, .btn {
+.btn-lg,
+.btn {
   border-radius: $sp5;
   //@extend .mx-2;
   @extend .my-2;
   @extend .px-3;
   @extend .noUserSelect;
-  transition: all .2s;
+  transition: all 0.2s;
   @extend .justify-content-center;
 }
 
@@ -144,7 +138,7 @@ h3 {
   background-size: 16rem;
   background-position: 48% 53%;
   background-blend-mode: multiply;
-  transition: all .35s;
+  transition: all 0.35s;
   @extend .shadow-sm;
   @extend .noUserSelect;
 
@@ -160,7 +154,7 @@ h3 {
   background-blend-mode: multiply;
   background-size: 7rem;
   @extend .shadow;
-  transition: all .45s;
+  transition: all 0.45s;
   text-decoration: none;
 
   @-moz-document url-prefix() {
@@ -215,13 +209,13 @@ h3 {
   @extend .shadow-sm;
   @extend .px-4;
   @extend .noUserSelect;
-  transition: all .35s;
+  transition: all 0.35s;
 }
 
 .btn-plum:hover {
   background: linear-gradient(50deg, $plum 5%, $disco 70%, $disco 100%);
   @extend .shadow;
-  transition: all .35s;
+  transition: all 0.35s;
 }
 
 // // // // // // // // // // // // // // // // // // // // // // //
@@ -234,7 +228,7 @@ h3 {
   background: linear-gradient(90deg, $disco 5%, $plum 70%, $plum 100%);
   @extend .shadow-lg;
   @extend .position-absolute;
-  top:0px;
+  top: 0px;
   z-index: 20;
   @extend .text-light;
   text-transform: uppercase;
@@ -252,7 +246,8 @@ h3 {
   .skew {
     filter: saturate(100%) contrast(100%) !important; //accounts for FireFox color difference
   }
-  .boltPattern, .boltPattern2 {
+  .boltPattern,
+  .boltPattern2 {
     animation: none 0s linear infinite !important;
   }
 
@@ -290,7 +285,6 @@ h3 {
   //padding-right: 0;
 
   @include media-breakpoint-up(lg) {
-
     justify-content: center;
   }
 }
@@ -301,27 +295,27 @@ h3 {
 }
 
 .boltPattern {
-    position: absolute;
-    background-blend-mode: color-burn;
-    mix-blend-mode: color-burn;
-    z-index: 1;
-    height: 100%;
-    width: 200%;
-    background-image: url("assets/images/bolt-snow.svg");
-    background-repeat: repeat;
-    background-size: 8rem;
-    overflow: hidden;
-    opacity: .3;
-    pointer-events: none;
-    animation: animatedBackground 70s linear 1;
+  position: absolute;
+  background-blend-mode: color-burn;
+  mix-blend-mode: color-burn;
+  z-index: 1;
+  height: 100%;
+  width: 200%;
+  background-image: url("assets/images/bolt-snow.svg");
+  background-repeat: repeat;
+  background-size: 8rem;
+  overflow: hidden;
+  opacity: 0.2;
+  pointer-events: none;
+  animation: animatedBackground 120s linear 1;
 }
 
 @keyframes animatedBackground {
-	from {
+  from {
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
   }
-	to {
+  to {
     transform: translateX(0%);
     -webkit-transform: translateX(0%);
   }
@@ -332,7 +326,6 @@ h3 {
   pointer-events: none;
 
   @include media-breakpoint-only(xs) {
-
     margin-top: 2rem;
   }
 }
@@ -350,7 +343,6 @@ h3 {
 
   @include media-breakpoint-only(sm) {
     padding: 0 4%;
-
   }
   @include media-breakpoint-only(md) {
     padding: 0 5.25%;
@@ -371,9 +363,7 @@ h3 {
   margin-top: $sp5;
   margin-bottom: $sp3;
   padding: $sp4 0;
-
 }
-
 
 // // // // // // // // // // // // // // // // // // // // // // //
 //                                                                //
@@ -390,7 +380,6 @@ h3 {
   @include media-breakpoint-only(xs) {
     width: 78% !important;
   }
-
 }
 
 .blur {
@@ -415,7 +404,7 @@ h3 {
 .fullwidthImg {
   width: 300%;
   text-align: center;
-  margin-left:-60vw;
+  margin-left: -60vw;
   position: relative;
 
   .img {
@@ -423,13 +412,11 @@ h3 {
   }
 }
 
-
-
 .subImg {
   @extend .position-absolute;
   border-radius: $sp1;
   @extend .shadow;
-  top:-2%;
+  top: -2%;
   left: 70%;
   width: 40% !important;
 
@@ -439,13 +426,11 @@ h3 {
 }
 
 .subImg2 {
-  top:17%;
+  top: 17%;
 }
 
 .subImg3 {
   @extend .position-absolute;
-
-
 
   left: -5%;
   top: 3%;
@@ -522,7 +507,6 @@ h3 {
     //margin-bottom: 7rem;
     margin-left: 11%;
   }
-
 }
 
 .cardFour h2 {
@@ -544,8 +528,6 @@ h3 {
       //font-size: 220%;
     }
   }
-
-
 }
 
 .highlightText-Lift {
@@ -598,29 +580,28 @@ h3 {
   @extend .position-absolute;
   width: 58px;
   margin-left: -5.95rem;
-  margin-top: .35rem;
+  margin-top: 0.35rem;
 }
-
 
 .highlightText-Bulb ~ h2 {
   @extend .position-relative;
 }
 
-
 .supportText {
   @extend .text-center;
   margin-bottom: $sp2;
-
 
   h3 {
     font-size: $smallFont;
   }
 }
 
-
-.boltOne, .boltTwo, .boltThree, .boltFour {
-    position: relative;
-    pointer-events: none;
+.boltOne,
+.boltTwo,
+.boltThree,
+.boltFour {
+  position: relative;
+  pointer-events: none;
 }
 
 .boltOne > img {
@@ -630,16 +611,16 @@ h3 {
   z-index: -3; //sets the bolt behind the top banner
 
   @include media-breakpoint-only(xs) {
-    top:-20px;
+    top: -20px;
     height: 600px;
     left: -44%;
   }
   @include media-breakpoint-only(sm) {
-    top:-150px;
+    top: -150px;
     height: 900px;
   }
   @include media-breakpoint-only(md) {
-    top:-140px;
+    top: -140px;
     height: 1100px;
     left: -40%;
   }
@@ -679,7 +660,6 @@ h3 {
     top: -140px;
   }
 }
-
 
 .boltThree > img {
   top: -240px;
@@ -751,7 +731,7 @@ h3 {
 .circle {
   @extend .position-absolute;
   width: 75px;
-  margin-top: .8rem;
+  margin-top: 0.8rem;
   margin-left: -12.7rem;
 
   @include media-breakpoint-only(xs) {
@@ -782,7 +762,14 @@ h3 {
 // // // // // // // // // // // // // // // // // // // // // // //
 
 .sectionSkew {
-  background: linear-gradient(60deg, rgba($ash, 1) 0%, rgba($snow, 1) 35%, rgba($snow, 1) 40%, rgba($snow, 1) 60%, rgba($ash, 1) 90%);
+  background: linear-gradient(
+    60deg,
+    rgba($ash, 1) 0%,
+    rgba($snow, 1) 35%,
+    rgba($snow, 1) 40%,
+    rgba($snow, 1) 60%,
+    rgba($ash, 1) 90%
+  );
   -webkit-transform: skewY(-12deg);
   -moz-transform: skewY(-12deg);
   -ms-transform: skewY(-12deg);
@@ -807,7 +794,6 @@ h3 {
 }
 
 .features {
-
   text-align: justify;
   margin: $sp7 0 4rem 0;
 
@@ -851,7 +837,7 @@ h3 {
   border-radius: $sp5;
   @extend .py-1;
   @extend .my-2;
-  transition: all .3s;
+  transition: all 0.3s;
   @extend .mx-4;
   @extend .mx-md-0;
 }
@@ -871,7 +857,7 @@ h3 {
   background: $ash;
   border-radius: $sp5;
   color: $charcoal;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .features h2 {
@@ -892,7 +878,7 @@ h3 {
 
 .nav-link.active .underline {
   display: inline; //show underline on active item
-  animation: animatedUnderline .25s ease 1;
+  animation: animatedUnderline 0.25s ease 1;
   transform-origin: 0px 10px;
 }
 
@@ -901,10 +887,10 @@ h3 {
 }
 
 @keyframes animatedUnderline {
-	from {
+  from {
     transform: scaleX(0) rotate(3deg);
   }
-	to {
+  to {
     transform: scaleX(1);
   }
 }
@@ -971,13 +957,12 @@ h3 {
   //@extend .py-5;
   padding: $sp4;
   margin-right: 0 !important;
-
 }
 
 .footerText {
   margin-top: $sp1;
   color: $snow;
-  padding-left:0;
+  padding-left: 0;
 
   h5 {
     font-weight: $thinWeight;
@@ -1003,7 +988,6 @@ h3 {
   padding-bottom: 1.5%;
   color: $snow;
   text-align: right;
-
 
   @include media-breakpoint-up(md) {
     padding-right: 0;
