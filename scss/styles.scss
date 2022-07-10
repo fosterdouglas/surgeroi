@@ -13,7 +13,12 @@ $ash: #e3e3e3;
 $snow: #ededed;
 
 //FONT VARIABLES
-$baseFamily: "sofia-pro-condensed";
+@font-face {
+  font-family: "Sofia Sans";
+  src: url("assets/fonts/sofia-sans") format("otf");
+}
+
+$baseFamily: "Sofia Sans";
 $thinWeight: 200;
 $baseWeight: 300;
 $boldWeight: 600;
@@ -127,6 +132,7 @@ h3 {
   @extend .noUserSelect;
   transition: all 0.2s;
   @extend .justify-content-center;
+  border: none !important;
 }
 
 .btn-secondary {
@@ -203,7 +209,7 @@ h3 {
 }
 
 .btn-plum {
-  font-size: $mediumFont;
+  font-size: $smallFont;
   background: linear-gradient(50deg, $disco 5%, $plum 70%, $plum 100%);
   background-size: 400% 400%;
   @extend .shadow-sm;
@@ -338,20 +344,19 @@ h3 {
 .logoSm {
   @extend .ml-auto;
   pointer-events: none;
-  padding: $sp1 2%;
-  //margin-left: $sp3;
+  padding: $sp2;
 
   @include media-breakpoint-only(sm) {
-    padding: 0 4%;
+    padding: 0 0 0 8%;
   }
   @include media-breakpoint-only(md) {
-    padding: 0 5.25%;
+    padding: 0 0 0 10.5%;
   }
   @include media-breakpoint-only(lg) {
-    padding: 0 5.75%;
+    padding: 0 0 0 11.5%;
   }
   @include media-breakpoint-only(xl) {
-    padding: 0 6%;
+    padding: 0 0 0 12.5%;
   }
 }
 
@@ -438,9 +443,36 @@ h3 {
 
 .subImg4 {
   @extend .position-relative;
-  @extend .shadow;
+  // @extend .shadow-sm;
   margin-top: $sp2;
-  width: 65% !important;
+  height: 30px;
+  // -webkit-filter: drop-shadow(0 0.125rem 0.25rem  rgba(0,0,0,0.175));
+  filter: drop-shadow(0 0.125rem 0.25rem  rgba(0,0,0,0.175));
+  
+  @include media-breakpoint-up(md) {
+    height: 41px;
+  }
+}
+
+.subImg5 {
+  @extend .position-absolute;
+  
+  left: -5%;
+  top: 6.5%;
+  
+  > img {
+    height: 75px;
+    // -webkit-filter: drop-shadow(0 0.125rem 0.25rem  rgba(0,0,0,0.175));
+    filter: drop-shadow(0 0.125rem 0.25rem  rgba(0,0,0,0.175));
+    
+    @include media-breakpoint-only(md) {
+      height: 100px;
+    }
+    
+    @include media-breakpoint-up(lg) {
+      height: 110px;
+    }
+  }
 }
 
 .cardOne {
@@ -537,9 +569,9 @@ h3 {
 
 .lift {
   @extend .position-absolute;
-  width: 115%;
-  margin-top: -0.4rem;
-  margin-left: -4.3rem;
+  width: 120%;
+  margin-top: 0.2rem;
+  margin-left: -3.7rem;
 }
 
 .highlightText-Wave {
@@ -549,10 +581,11 @@ h3 {
 .wave {
   @extend .position-absolute;
   width: 5600%;
-  margin-left: -14.2rem;
+  height: 90%;
+  margin-left: -15.0rem;
   margin-top: 3.6rem;
 
-  @include media-breakpoint-only(xs) {
+  @include media-breakpoint-between(xs, md) {
     margin-left: -6.5rem;
   }
 }
@@ -563,9 +596,9 @@ h3 {
 
 .star {
   @extend .position-absolute;
-  width: 78px; //this one didnt work with percentage for some reason?
+  width: 78px;
   margin-top: 0.3rem;
-  margin-left: -3.95rem;
+  margin-left: -4.35rem;
 
   @include media-breakpoint-between(xs, sm) {
     margin-left: 2.5rem;
@@ -579,8 +612,7 @@ h3 {
 .bulb {
   @extend .position-absolute;
   width: 58px;
-  margin-left: -5.95rem;
-  margin-top: 0.35rem;
+  margin-left: -6.55rem;
 }
 
 .highlightText-Bulb ~ h2 {
@@ -594,6 +626,21 @@ h3 {
   h3 {
     font-size: $smallFont;
   }
+}
+
+.highlightText-Circle {
+  @extend .position-relative;
+}
+
+.circle {
+  @extend .position-absolute;
+  width: 75px;
+  margin-top: 0.8rem;
+  margin-left: -14.1rem;
+}
+
+.highlightText-Circle ~ h2 {
+  @extend .position-relative;
 }
 
 .boltOne,
@@ -724,34 +771,17 @@ h3 {
 //                               CTA                              //
 //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
-.highlightText-Circle {
-  @extend .position-relative;
-}
 
-.circle {
-  @extend .position-absolute;
-  width: 75px;
-  margin-top: 0.8rem;
-  margin-left: -12.7rem;
-
-  @include media-breakpoint-only(xs) {
-    margin-left: -5.3rem;
-  }
-}
-
-.highlightText-Circle ~ h2 {
-  @extend .position-relative;
-}
 
 .cta {
   margin-top: 8rem;
-  margin-bottom: 6rem;
+  // margin-bottom: 4rem;
   background: $ash;
   padding: $sp3 0;
 
   @include media-breakpoint-only(xs) {
     margin-top: 8rem;
-    margin-bottom: 6rem;
+    // margin-bottom: 6rem;
   }
 }
 
@@ -795,7 +825,7 @@ h3 {
 
 .features {
   text-align: justify;
-  margin: $sp7 0 4rem 0;
+  margin: $sp5 0 4rem 0;
 
   @include media-breakpoint-only(sm) {
     min-height: 750px;
@@ -816,8 +846,8 @@ h3 {
 
 .featuresNav {
   @extend .mt-md-5;
-  @extend .mb-4;
-  @extend .mb-md-0;
+  // @extend .mb-5;
+  // @extend .mb-md-0;
   font-size: $mediumFont;
   @extend .text-center;
   @extend .mr-md-3;
@@ -871,15 +901,15 @@ h3 {
 
 .underline {
   @extend .position-absolute;
-  width: 180px;
-  margin-top: 1.1rem;
-  margin-left: -5.6rem;
+  width: 130px;
+  margin-top: 1.2rem;
+  margin-left: -4.1rem;
 }
 
 .nav-link.active .underline {
   display: inline; //show underline on active item
-  animation: animatedUnderline 0.25s ease 1;
-  transform-origin: 0px 10px;
+  // animation: animatedUnderline 0.25s ease 1;
+  // transform-origin: 0px 10px;
 }
 
 .nav-link:not(.active) .underline {
@@ -927,6 +957,11 @@ h3 {
     //margin: 0 !important;
     margin-left: auto;
     margin-right: auto;
+    
+    &:focus {
+      border-color: $disco !important;
+      box-shadow: 0 0 0 .2rem rgba(127, 23, 79, 0.25) !important;
+    }
   }
 
   .btn {
@@ -955,7 +990,7 @@ h3 {
   //@extend .d-flex;
   //height: 100%;
   //@extend .py-5;
-  padding: $sp4;
+  padding: $sp3;
   margin-right: 0 !important;
 }
 
