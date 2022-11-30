@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no minimum-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="styles.css" />
 
@@ -26,12 +26,12 @@
 </div>
 
 <!-- BANNER -->
-  <section class="mx-auto" style="max-width: 1200px">
+  <section  >
 
-    <div class="container-fluid bannerSkew">
+    <div class="container-fluid  bannerSkew">
       <div class="boltPattern d-none d-sm-block"></div>
 
-      <div class="row content align-items-center banner">
+      <div class="row content align-items-center banner w-100 mx-0">
 
           <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3 mr-lg-auto logo">
               <img src="assets/images/logo.svg" />
@@ -51,11 +51,11 @@
             </a>
           </div> -->
 
-          <!-- <div class="col-sm-auto d-none">
-            <a href="#pricingStart" class="btn-lg btn-outline-light">
-              Pricing
+          <div class="col-sm-auto d-lg-flex d-none">
+            <a href="#calculatorStart" class="btn-lg btn-outline-light">
+              Calculate your ROI
             </a>
-          </div> -->
+          </div>
 
           <!-- <div class="col-sm-auto d-none">
             <div class="btn-lg btn-outline-light">
@@ -74,14 +74,14 @@
           <div class="row hero">
 
             <div class="col-12">
-              <h1 class="w-100">A new industry standard<br/>for VIP revenue growth</h1>
+              <h1 class="w-100">The new standard for<br/>VIP strategy & growth</h1>
             </div>
 
             <div class="w-100"></div>
 
-            <div class="col-sm-4 col-8 mt-2 mb-1 mb-sm-3">
+            <div class="col-sm-4 col-8 mt-4 mb-1 mb-sm-3">
               <a href="#contentStart" class="btn-lg btn-light btn-block text-center">
-                Learn More
+                Learn more
               </a>
             </div>
             
@@ -152,7 +152,7 @@
             <span class="highlightText-Wave">&nbsp;
               <img class="wave" draggable="false" src="assets/images/wave.svg" />
             </span>
-            <h2>Actionable Dashboards.</h2>
+            <h2>Actionable dashboards.</h2>
           </div>
 
           <div class="supportText">
@@ -249,7 +249,7 @@
             <span class="highlightText-Circle">&nbsp;
               <img class="circle" draggable="false" src="assets/images/circle.svg" />
             </span>
-            <h2>3% Lift Guaranteed.</h2>
+            <h2>3% lift guaranteed.</h2>
           </div>
 
           <div class="supportText">
@@ -257,7 +257,7 @@
           </div>
 
           <a href="#contactStart" class="btn btn-plum mt-2">
-            Contact Us
+            Contact us
           </a>
 
         </div>
@@ -275,59 +275,61 @@
 
       <div class="row justify-content-center features">
 
-        <div class="col-8 col-md-8 col-lg-auto featuresNav">
+        <div class="col-12 featuresNav">
 
-          <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <ul class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <li class="nav-item">
+              <a class="nav-link active" type="button" id="v-pills-home-tab" data-bs-toggle="tab" data-bs-target="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                <span class="highlightText-Underline">
+                  <img class="underline" draggable="false" src="assets/images/underline.svg" />
+                </span>
+                <h3><span class="d-none d-sm-inline">VIP</span> organization</h3>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" type="button" id="v-pills-profile-tab" data-bs-toggle="tab" data-bs-target="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                <span class="highlightText-Underline">
+                  <img class="underline" draggable="false" src="assets/images/underline.svg" />
+                </span>
+                <h3><span class="d-none d-sm-inline">Account</span> managers</h3>
+              </a>
+            </li>
 
-            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
-              <span class="highlightText-Underline">
-                <img class="underline" draggable="false" src="assets/images/underline.svg" />
-              </span>
-              <h3><span class="d-none d-sm-inline">VIP</span> Organization</h3>
-            </a>
+            <li class="nav-item">
+              <a class="nav-link" type="button" id="v-pills-messages-tab" data-bs-toggle="tab" data-bs-target="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                <span class="highlightText-Underline">
+                  <img class="underline" draggable="false" src="assets/images/underline.svg" />
+                </span>
+                <h3><span class="d-none d-sm-inline">Smart</span> dashboards</h3>
+              </a>
+            </li>
 
-            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-              <span class="highlightText-Underline">
-                <img class="underline" draggable="false" src="assets/images/underline.svg" />
-              </span>
-              <h3><span class="d-none d-sm-inline">Account</span> Managers</h3>
-            </a>
+            <li class="nav-item">
+              <a class="nav-link" type="button" id="v-pills-settings-tab" data-bs-toggle="tab" data-bs-target="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                <span class="highlightText-Underline">
+                  <img class="underline" draggable="false" src="assets/images/underline.svg" />
+                </span>
+                <h3>Data science</h3>
+              </a>
+            </li>
 
-            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
-              <span class="highlightText-Underline">
-                <img class="underline" draggable="false" src="assets/images/underline.svg" />
-              </span>
-              <h3><span class="d-none d-sm-inline">Smart</span> Dashboards</h3>
-            </a>
+            <li class="nav-item">
+              <a class="nav-link" type="button" id="v-pills-top5-tab" data-bs-toggle="tab" data-bs-target="#v-pills-top5" role="tab" aria-controls="v-pills-top5" aria-selected="false">
+                <span class="highlightText-Underline">
+                  <img class="underline" draggable="false" src="assets/images/underline.svg" />
+                </span>
+                <h3>The top 5%</h3>
+              </a>
+            </li>
 
-            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-              <span class="highlightText-Underline">
-                <img class="underline" draggable="false" src="assets/images/underline.svg" />
-              </span>
-              <h3>Data Science</h3>
-            </a>
-
-            <a class="nav-link" id="v-pills-top5-tab" data-toggle="pill" href="#v-pills-top5" role="tab" aria-controls="v-pills-top5" aria-selected="false">
-              <span class="highlightText-Underline">
-                <img class="underline" draggable="false" src="assets/images/underline.svg" />
-              </span>
-              <h3>The Top 5%</h3>
-            </a>
-
-            <!-- <a class="nav-link" id="v-pills-pricing-tab" data-toggle="pill" href="#v-pills-pricing" role="tab" aria-controls="v-pills-pricing" aria-selected="false">
-              <span class="highlightText-Underline">
-                <img class="underline" draggable="false" src="assets/images/underline.svg" />
-              </span>
-              <h3>Pricing</h3>
-            </a> -->
-
-          </div>
+          </ul>
         </div>
         <div class="col-10 col-md-6 mt-3">
           <div class="tab-content" id="v-pills-tabContent">
 
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-              <h2><span class="d-none d-sm-inline">Simple, </span>Robust <br class="d-none d-sm-block"/> VIP Management.</h2>
+              <h2><span class="d-none d-sm-inline">Simple, </span>robust <br class="d-none d-sm-block"/> VIP management.</h2>
 
               <p>SurgeROI™ delivers a full-featured VIP customer relationship management model and tool for lifting transactional spending across prioritized customers. We utilize data from customer sales history and personal information to increase customer investment and loyalty with your company, resulting in a minimum of 3% revenue lift, and often up to 10%.
               </p>
@@ -349,7 +351,7 @@
             </div>
 
             <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-              <h2>Smart, Data-Rich Dashboards.</h2>
+              <h2>Smart, data-rich dashboards.</h2>
               <p>
                 The SurgeROI™ system constantly learns and adjusts treatment suggestions based on behaviour patterns and impact measures. While the data trains the workflow engine, the dashboards inform account managers and administrators of the impact their work is having. 
               </p>
@@ -365,7 +367,7 @@
             </div>
 
             <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-              <h2>A Wholistic<br/>Life Cycle Model.</h2>
+              <h2>A wholistic<br/>life cycle model.</h2>
               <p>
                 The first step in VIP management is understanding the customer lifecycle for VIPs. We do this by passing data into the SurgeROI™ Lifecycle Modelling program. The program then passes it to our business intelligence program where a multi-dimensional grid is built and baselined. Mapping how these separate dimensions work together to inform a VIPs long term value is key in creating successful VIP treatment recommendations.
               </p>
@@ -381,7 +383,7 @@
             </div>
 
             <div class="tab-pane fade" id="v-pills-top5" role="tabpanel" aria-labelledby="v-pills-top5-tab">
-              <h2>Prioritizing Your <br/>Loyal Customers.</h2>
+              <h2>Prioritizing your <br/>loyal customers.</h2>
               
               <p>
               Sustaining and growing VIP communities has an extraordinary impact on product and corporate revenues. Focusing on just the top tier of a VIP community, often the <span style="font-weight: 600;">top 1%</span> outperform the <span style="font-weight: 600;">next top 4% combined</span>. Together, this top 5% of VIP customers can contribute over half of gross revenue for some businesses. Along with the remaining VIPs, this population often covers 80% of gross revenue.
@@ -392,53 +394,141 @@
               </p>
             </div>
 
-            <!-- <div class="tab-pane fade" id="v-pills-pricing" role="tabpanel" aria-labelledby="v-pills-pricing-tab">
-              <h2>Simple Pricing,<br/>Pays For Itself.</h2>
-              Only pay a portion of the uplift that SurgeROI™ generates. <br/>Everything else is revenue in pocket.
-              <div class="row">
-                <div class="col-12 mt-4 mx-auto text-center">
-                  <img src="assets/images/pricing-graph.svg" class="w-100 pricing text-center" />
-                </div>
-              </div>
-
-            </div> -->
           </div>
         </div>
 
       </div>
-        <hr class="w-75 pb-4"/>
+       
 
     </div>
+    
 
   </section>
+  <hr class="w-75 pb-4 border-dark mx-auto"/>
 
 
+  <!-- CALCULATOR -->
 
-  <section id="contactStart">
+   <section id="calculatorStart">
 
     <div class="container-fluid">
 
 
-      <div class="row">
-        <div class="col-12 text-center">
+      <div class="row justify-content-center mb-5">
+        <div class="col-12">
+
+
+          <form class="contactForm pb-3" action="https://formspree.io/xeqrlnrr" method="POST">
+            <h1>Calculate your ROI</h1>
+            <p class="w-100 text-center mb-4">
+            Some text here
+            </p>
+            <div class="form-group input-group mb-4">
+              
+              <label for="annualRevenue">What is your product's <b>annual recurring revenue</b>?</label>
+              <span class="input-group-text ms-3 rounded-1">$</span>
+              <input type="number"class="form-control rounded-1" id="annualRevenue" value="0">
+              
+            </div>
+            <div class="form-group input-group mb-4">
+              <label for="activeUsers">What total <b>monthly active users</b> does your product average?</label>
+              <span class="input-group-text ms-3 rounded-1">#</span>
+              <input type="number"class="form-control rounded-1" id="activeUsers" value="0">
+            </div>
+            <div class="form-group mb-1 ">
+              <label for="loyaltyProgram">Do you have an existing <b>loyalty program</b> for top spenders?</label>
+            </div>
+            <div class="form-check form-check-inline mb-3 mb-4">
+              
+              <input type="radio" class="btn-check" name="options-outlined" id="loyaltyTrue" autocomplete="off" onclick="loyaltyTrueQuestions()">
+              <label class="btn btn-outline-dark" for="loyaltyTrue">Yes</label>
+
+              <input type="radio" class="btn-check" name="options-outlined" id="loyaltyFalse" autocomplete="off" onclick="loyaltyFalseQuestions()">
+              <label class="btn btn-outline-danger" for="loyaltyFalse">No</label>
+            </div>
+            <div class="form-group input-group loyaltyTrue d-none mb-4">
+              <label for="activeVips">How many <b>monthly active VIPs</b> are in your loyalty program?</label>
+              <span class="input-group-text ms-3 rounded-1">#</span>
+              <input type="number"class="form-control rounded-1" id="activeVips" value="0">
+            </div>
+            <div class="form-group input-group loyaltyTrue d-none">
+              <label for="attributableArr" class="form-label">How much <b>annual recurring revenue</b> is attributable to loyalty program members?</label>
+ 
+             
+           
+              <input type="range" class="form-range ms-3 " min="0" max="100" value="90" id="attributableRevRange" onchange="attributableRevUpdate(this.value)">
+              <div class="col-auto small ml-3">0%</div>
+              <div class="ml-auto col-auto small">100%</div>
+              <div class="w-100 mb-4"></div>
+              <span class="input-group-text ms-3 rounded-1">%</span>
+            
+              
+              <input type="number" class="form-control rounded-1" min="0" max="100" id="attributableRev" :value="attributableRev">
+            </div> 
+            <!-- <div class="form-group loyaltyFalse d-none">
+              <label for="attributable20Percent" class="form-label">How much <b>annual recurring revenue</b> is attributable to the top 20% of users?</label>
+              <input type="range" class="form-range" min="0" max="100" id="attributable20Percent">
+            </div> -->
+
+          </form>
+
+          <h2 class="text-center text-success mt-4" >$<span id="resultValue"></span></h2>
+          <h4 class="text-center">expected annual lift</h4>
+          <p class="text-center">with <span class="fw-bold" id="accountManagers">0</span> Account Manager(s)</p>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="w-75 pb-4  mx-auto border-dark"/>
+
+  <!-- READY FOR MORE? -->
+
+  <section id="contactStart">
+    
+
+    <div class="container-fluid">
+
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10 text-center">
 
 
           <form class="contactForm" action="https://formspree.io/xeqrlnrr" method="POST">
             <h1>Ready For More?</h1>
-            <p class="w-100">
-            Looking for details, or a peek at SurgeROI™? <br/>We'll contact you to learn about your needs<br/> and provide a personalized product demo.
+            <p class="w-100 mb-4">
+            Want more details, or a peek at SurgeROI™? We'll contact you to learn about your needs and provide a personalized product demo.
           </p>
+
             <div class="form-group">
               <label for="inputName">Name</label>
-              <input type="text" name="name" class="form-control" id="inputName">
-            </div>
-            <div class="form-group">
-              <label for="inputEmail">Email address</label>
-              <input type="email" name="_replyto" class="form-control" id="inputEmail1" aria-describedby="emailHelp">
-              <small id="emailHelp" style="font-weight: 100;" class="form-text text-muted text-left ml-3">We'll never share your email with anyone else.</small>
+              <input type="text" name="name" class="form-control" id="inputName" required>
             </div>
 
-            <button type="submit" class="btn btn-plum">Get Started</button>
+            <div class="form-group">
+              <label for="inputEmail">Email address</label>
+              <input type="email" name="_replyto" class="form-control" id="inputEmail1" aria-describedby="emailHelp" required>
+              <!-- <small id="emailHelp" style="font-weight: 100;" class="form-text text-muted text-left ml-3">We'll never share your email with anyone.</small> -->
+            </div>
+
+            <div class="form-group">
+              <label for="inputPhone">Phone number <span style="color: lightgrey">(optional)</span></label>
+              <input type="number" name="phone" class="form-control" id="inputPhone" >
+            </div>
+
+            <div class="form-group">
+              <label for="inputName">Company name, industry, and/or position <span style="color: lightgrey">(optional)</span></label>
+              <input type="text" name="name" class="form-control" id="inputName">
+            </div>
+
+            <div class="form-group">
+              <label for="inputName">Additional details or questions <span style="color: lightgrey">(optional)</span></label>
+              <textarea type="text" name="name" class="form-control" id="inputName"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-plum mt-4">Get Started</button>
           </form>
 
         </div>
@@ -463,7 +553,7 @@
           <br/>
           <br/>
         ©2022 SurgeROI™</h5>
-        <h5><a href="#">Legal</a></h5>
+        <!-- <h5><a href="#">Legal</a></h5> -->
       </div>
         <div class="col-2 logoSm">
             <img src="assets/images/logo-small.svg" />
@@ -476,13 +566,9 @@
 </section>
 <!-- END FOOTER -->
 
+<script src="/assets/scripts/calculator.js"></script>
 
-<!-- Optional JavaScript -->
-
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </div>
 
 </body>

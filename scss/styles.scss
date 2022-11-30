@@ -126,8 +126,7 @@ $theme-colors: (
 //                            GENERAL                             //
 //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
-html {
-}
+
 
 body {
   font-family: $baseFamily;
@@ -192,12 +191,12 @@ h3 {
 .btn {
   border-radius: $sp5;
   //@extend .mx-2;
-  @extend .my-2;
+  // @extend .my-2;
   @extend .px-3;
   @extend .noUserSelect;
   transition: all 0.2s;
   @extend .justify-content-center;
-  border: none !important;
+  // border: none ;
 }
 
 .btn-secondary {
@@ -289,6 +288,21 @@ h3 {
   transition: all 0.35s;
 }
 
+.form-range::-webkit-slider-thumb {
+  background-color: $charcoal;
+  
+
+  &:active {
+    background-color: rgba($charcoal, 0.5) !important;
+  }
+
+
+    
+}
+
+.form-range:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 0.2rem rgba($charcoal, 0.25) !important;
+}
 // // // // // // // // // // // // // // // // // // // // // // //
 //                                                                //
 //                        HEADER / FOOTER                         //
@@ -330,11 +344,11 @@ h3 {
 .bannerSkew {
   background: linear-gradient(50deg, $plum 10%, $disco 100%);
   margin-top: -150px;
-  -webkit-transform: skewY(-12deg);
-  -moz-transform: skewY(-12deg);
-  -ms-transform: skewY(-12deg);
-  -o-transform: skewY(-12deg);
-  transform: skewY(-12deg);
+  -webkit-transform: skewY(-5deg);
+  -moz-transform: skewY(-5deg);
+  -ms-transform: skewY(-5deg);
+  -o-transform: skewY(-5deg);
+  transform: skewY(-5deg);
   filter: saturate(120%) contrast(110%);
   @extend .d-flex;
   margin-bottom: 220px;
@@ -347,11 +361,11 @@ h3 {
   justify-content: center;
   @extend .d-flex;
   margin-top: 200px;
-  -webkit-transform: skewY(12deg);
-  -moz-transform: skewY(12deg);
-  -ms-transform: skewY(12deg);
-  -o-transform: skewY(12deg);
-  transform: skewY(12deg);
+  -webkit-transform: skewY(5deg);
+  -moz-transform: skewY(5deg);
+  -ms-transform: skewY(5deg);
+  -o-transform: skewY(5deg);
+  transform: skewY(5deg);
   //margin-right: 0 !important;
   //padding-right: 0;
 
@@ -476,10 +490,6 @@ h3 {
   text-align: center;
   margin-left: -60vw;
   position: relative;
-
-  .img {
-    //position: absolute;
-  }
 }
 
 .subImg {
@@ -701,7 +711,7 @@ h3 {
   @extend .position-absolute;
   width: 75px;
   margin-top: 0.8rem;
-  margin-left: -14.1rem;
+  margin-left: -13.1rem;
 }
 
 .highlightText-Circle ~ h2 {
