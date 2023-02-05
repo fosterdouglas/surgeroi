@@ -12,78 +12,7 @@ $charcoal: #383838;
 $ash: #e3e3e3;
 $snow: #ededed;
 
-//FONT DECLARATIONS
-@font-face {
-    font-family: 'sofiasans';
-    src: url('../assets/fonts/sofia-sans/sofiasans-black.woff2') format('woff2'),
-         url('../assets/fonts/sofia-sans/sofiasans-black.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'sofiasans';
-    src: url('../assets/fonts/sofia-sans/sofiasans-blackitalic.woff2') format('woff2'),
-         url('../assets/fonts/sofia-sans/sofiasans-blackitalic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'sofiasans';
-    src: url('../assets/fonts/sofia-sans/sofiasans-bold.woff2') format('woff2'),
-         url('../assets/fonts/sofia-sans/sofiasans-bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'sofiasans';
-    src: url('../assets/fonts/sofia-sans/sofiasans-bolditalic.woff2') format('woff2'),
-         url('../assets/fonts/sofia-sans/sofiasans-bolditalic.woff') format('woff');
-    font-weight: 700;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'sofiasans';
-    src: url('../assets/fonts/sofia-sans/sofiasans-light.woff2') format('woff2'),
-         url('../assets/fonts/sofia-sans/sofiasans-light.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'sofiasans';
-    src: url('../assets/fonts/sofia-sans/sofiasans-lightitalic.woff2') format('woff2'),
-         url('../assets/fonts/sofia-sans/sofiasans-lightitalic.woff') format('woff');
-    font-weight: 100;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'sofiasans';
-    src: url('../assets/fonts/sofia-sans/sofiasans-medium.woff2') format('woff2'),
-         url('../assets/fonts/sofia-sans/sofiasans-medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'sofiasans';
-    src: url('../assets/fonts/sofia-sans/sofiasans-mediumitalic.woff2') format('woff2'),
-         url('../assets/fonts/sofia-sans/sofiasans-mediumitalic.woff') format('woff');
-    font-weight: 500;
-    font-style: italic;
-}
-
-
-// @font-face {
-//   font-family: "SofiaSans";
-//   src: url("assets/fonts/sofia-sans/SofiaSans-Light.otf") format("otf");
-// }
-// 
-// @font-face {
-//   font-family: "DroidSerif";
-//   src: url("DroidSerif-BoldItalic-webfont.ttf") format("truetype");
-//   font-weight: bold;
-//   font-style: italic;
-// }
-
-$baseFamily: "sofiasans";
+$baseFamily: niveau-grotesk, sans-serif;
 $thinWeight: 200;
 $baseWeight: 300;
 $boldWeight: 600;
@@ -129,6 +58,7 @@ $theme-colors: (
 
 
 body {
+  
   font-family: $baseFamily;
   font-weight: $baseWeight;
   font-size: $baseFont;
@@ -447,6 +377,13 @@ h3 {
   margin-top: $sp5;
   margin-bottom: $sp3;
   padding: $sp4 0;
+
+  h1 {
+    font-family: "brevia", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
 }
 
 // // // // // // // // // // // // // // // // // // // // // // //
