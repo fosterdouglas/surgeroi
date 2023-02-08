@@ -428,14 +428,48 @@ h3 {
 .fullwidthImg {
   width: 280%;
   text-align: center;
-  margin-left: -56vw;
+  // margin-left: -56vw;
   position: relative;
+  animation: dashboard 35s ease-in-out infinite;
+
+  @keyframes dashboard {
+    0% {
+      transform: translateX(-50%);
+    }
+    50% {
+      transform: translateX(-25%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-left: -60vw;
+    animation: dashboardSmall 45s ease-in-out infinite;
+
+    @keyframes dashboardSmall {
+      0% {
+        transform: translateX(10%);
+      }
+      50% {
+        transform: translateX(-10%);
+      }
+      100% {
+        transform: translateX(10%);
+      }
+    }
+  }
 
   img {
     max-width: 2500px;
     min-width: 1500px;
   }
 }
+
+
+
+
 
 .subImg {
   @extend .position-absolute;
@@ -629,6 +663,10 @@ h3 {
   @extend .position-absolute;
   width: 58px;
   margin-left: -7.15rem;
+
+  @include media-breakpoint-between(xs, sm) {
+    margin-left: -3.2rem;
+  }
 }
 
 .highlightText-Bulb ~ h2 {
@@ -653,6 +691,10 @@ h3 {
   width: 80px;
   margin-top: 0.5rem;
   margin-left: -14.3rem;
+
+  @include media-breakpoint-between(xs, sm) {
+    margin-left: -5.2rem;
+  }
 }
 
 .highlightText-Circle ~ h2 {
@@ -887,7 +929,7 @@ h3 {
   line-height: 0;
   transform: translateX(-300px) rotate(180deg);
   // transform: rotate(180deg) !important;
-  animation: looping 50s cubic-bezier(.4,.5,.5,.4) infinite;
+  animation: looping 40s cubic-bezier(.4,.5,.5,.4) infinite;
 
   @keyframes looping {
     0% {
