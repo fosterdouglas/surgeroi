@@ -152,14 +152,11 @@ h3 {
   background-repeat: no-repeat;
   background-size: 16rem;
   background-position: 43% 50%;
-  // background-blend-mode: multiply;
   transition: all 0.2s;
   padding: 0.5rem 2rem !important;
-  // @extend .shadow-sm;
   @extend .noUserSelect;
 
   @-moz-document url-prefix() {
-    //transition: none !important;
     background-size: 0rem !important;
     background-image: none !important;
   }
@@ -303,9 +300,13 @@ h3 {
   position: absolute;
   bottom: -1px;
   left: 0;
-  width: 200%; // This doubles the width of the svg element that was made as two-width copy of itself
+  width: 400%; // This doubles the width of the svg element that was made as two-width copy of itself
   overflow: hidden;
   line-height: 0;
+
+  @include media-breakpoint-up(md) {
+    width: 200%;
+  }
 
   animation: loop 60s cubic-bezier(.4,.5,.5,.4) infinite;
 }
@@ -314,10 +315,15 @@ h3 {
   position: absolute;
   bottom: -1px;
   left: 0;
-  width: 200%; // This doubles the width of the svg element that was made as two-width copy of itself
+  width: 400%; // This doubles the width of the svg element that was made as two-width copy of itself
   overflow: hidden;
   line-height: 0;
   opacity: 0.4;
+
+  @include media-breakpoint-up(md) {
+    width: 200%;
+  }
+
 
   animation: loop 300s linear infinite;
 }
@@ -336,7 +342,7 @@ h3 {
   filter: saturate(120%);
 }
 
-.banner {
+.wavies {
   // background-size: 100%;
   background-position: 0% 0%;
   animation: flow 75s linear infinite;
@@ -355,7 +361,7 @@ h3 {
 
 .logo {
   padding: $sp2 0;
-  pointer-events: none;
+  // pointer-events: none;
 }
 
 .textShadow {
@@ -363,32 +369,13 @@ h3 {
 }
 
 
-.logoSm {
-  @extend .ml-auto;
-  pointer-events: none;
-  padding: $sp2;
-
-  @include media-breakpoint-only(sm) {
-    padding: 0 0 0 8%;
-  }
-  @include media-breakpoint-only(md) {
-    padding: 0 0 0 10.5%;
-  }
-  @include media-breakpoint-only(lg) {
-    padding: 0 0 0 11.5%;
-  }
-  @include media-breakpoint-only(xl) {
-    padding: 0 0 0 12.5%;
-  }
-}
-
 .hero {
   color: $snow;
-  padding: $sp4 0;  
+  padding: $sp4 0; 
 }
 
 .title {
-  margin-bottom: 9vw;
+  margin-bottom: 8vw;
 }
 
 // // // // // // // // // // // // // // // // // // // // // // //
@@ -405,6 +392,35 @@ h3 {
 
   @include media-breakpoint-only(xs) {
     width: 78% !important;
+  }
+}
+
+.squiggle {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  width: 800%; 
+  overflow: hidden;
+  line-height: 0;
+
+  > svg {
+    color: rgba($fog, 0.2);
+  }
+
+  @include media-breakpoint-up(md) {
+    top: 2rem;
+    width: 300%;
+  }
+
+  animation: squiggle 20s cubic-bezier(.4,.5,.5,.4) infinite;
+
+  @keyframes squiggle {
+    0% {
+      transform: translateX(-25%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 }
 
@@ -430,16 +446,15 @@ h3 {
 .fullwidthImg {
   width: 280%;
   text-align: center;
-  // margin-left: -56vw;
   position: relative;
-  animation: dashboard 35s ease-in-out infinite;
+  animation: dashboard 120s ease infinite;
 
   @keyframes dashboard {
     0% {
       transform: translateX(-50%);
     }
     50% {
-      transform: translateX(-25%);
+      transform: translateX(-20%);
     }
     100% {
       transform: translateX(-50%);
@@ -448,7 +463,7 @@ h3 {
 
   @include media-breakpoint-up(md) {
     margin-left: -60vw;
-    animation: dashboardSmall 45s ease-in-out infinite;
+    animation: dashboardSmall 120s ease infinite;
 
     @keyframes dashboardSmall {
       0% {
@@ -594,7 +609,7 @@ h3 {
 }
 
 .cardFour h2 {
-  width: 75%;
+  // width: 75%;
   @extend .text-center;
   @extend .mx-auto;
 }
@@ -665,9 +680,10 @@ h3 {
   @extend .position-absolute;
   width: 58px;
   margin-left: -7.15rem;
+  
 
-  @include media-breakpoint-between(xs, sm) {
-    margin-left: -3.2rem;
+  @include media-breakpoint-up(sm) {
+    
   }
 }
 
@@ -692,10 +708,10 @@ h3 {
   @extend .position-absolute;
   width: 80px;
   margin-top: 0.5rem;
-  margin-left: -14.3rem;
+  margin-left: -14.7rem;
 
   @include media-breakpoint-between(xs, sm) {
-    margin-left: -5.2rem;
+    margin-left: -5.5rem;
   }
 }
 
@@ -926,12 +942,15 @@ h3 {
   position: absolute;
   top: -1px;
   left: 0;
-  width: 200%; // This doubles the width of the svg element that was made as two-width copy of itself
+  width: 400%; // This doubles the width of the svg element that was made as two-width copy of itself
   overflow: hidden;
   line-height: 0;
   transform: translateX(-300px) rotate(180deg);
-  // transform: rotate(180deg) !important;
-  animation: looping 40s cubic-bezier(.4,.5,.5,.4) infinite;
+  animation: looping 50s cubic-bezier(.4,.5,.5,.4) infinite;
+
+  @include media-breakpoint-up(md) {
+    width: 200%;
+  }
 
   @keyframes looping {
     0% {
