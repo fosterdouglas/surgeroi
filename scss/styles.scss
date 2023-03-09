@@ -262,10 +262,16 @@ h3 {
 
   &:active {
     background-color: rgba($coal, 0.5) !important;
+  } 
+}
+
+.featureList {
+  list-style: none;
+  
+  
+  li:before {
+    content: '✓ ';
   }
-
-
-    
 }
 
 .form-range:focus::-webkit-slider-thumb {
@@ -277,7 +283,7 @@ h3 {
 //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 .welcome {
-  height: 24px;
+  height: 28px;
   background: linear-gradient(50deg, $disco, $pool);
   @extend .shadow-lg;
   // @extend .position-absolute;
@@ -291,7 +297,7 @@ h3 {
   text-align: center;
 
   @include media-breakpoint-only(xs) {
-    padding: 2.25rem;
+    // padding: 2.25rem;
   }
 }
 
@@ -543,6 +549,24 @@ h3 {
     @include media-breakpoint-up(lg) {
       height: 110px;
     }
+  }
+}
+
+.subImg6 {
+  @extend .position-absolute;
+  
+  top: 11.5%;
+  
+  > img {
+    height: 75px;
+    // -webkit-filter: drop-shadow(0 0.125rem 0.25rem  rgba(0,0,0,0.175));
+    filter: drop-shadow(0 0.125rem 0.25rem  rgba(0,0,0,0.175));
+    
+    @include media-breakpoint-up(md) {
+      height: 90px;
+    }
+    
+
   }
 }
 
