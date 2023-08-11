@@ -283,7 +283,7 @@ h3 {
 //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 .welcome {
-  height: 28px;
+  height: 10px;
   background: linear-gradient(50deg, $disco, $pool);
   @extend .shadow-lg;
   // @extend .position-absolute;
@@ -296,9 +296,10 @@ h3 {
   @extend .noUserSelect;
   text-align: center;
 
-  @include media-breakpoint-only(xs) {
-    // padding: 2.25rem;
+  @include media-breakpoint-between(xs, sm) {
+    display: none !important;
   }
+  
 }
 
 
@@ -390,7 +391,7 @@ h3 {
 //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 .card {
-  width: 60%;
+  width: 50%;
   height: auto;
   z-index: 7;
   background-color: transparent;
@@ -446,6 +447,10 @@ h3 {
     @include media-breakpoint-up(md) {
       border-radius: $sp3;
     }
+  }
+
+  .img-alt {
+    width: 100%;
   }
 }
 
@@ -571,8 +576,8 @@ h3 {
 }
 
 .cardOne {
-  margin-left: 19.5%;
-  margin-bottom: 6rem;
+  margin-left: 25%;
+  margin-bottom: 5rem;
 
   @include media-breakpoint-only(xs) {
     margin-left: 7%;
@@ -581,7 +586,7 @@ h3 {
 }
 
 .cardTwo {
-  margin-left: 19.5%;
+  margin-left: 25%;
   margin-top: 0px;
   //margin-bottom: 10rem;
 
@@ -604,7 +609,7 @@ h3 {
 }
 
 .cardThree {
-  margin-left: 19.5%;
+  margin-left: 25%;
   margin-bottom: 6rem;
 
   @include media-breakpoint-only(xs) {
@@ -623,7 +628,7 @@ h3 {
 }
 
 .cardFour {
-  margin-left: 19.5%;
+  margin-left: 25%;
   margin-top: 0px;
 
   @include media-breakpoint-only(xs) {
