@@ -1,0 +1,10 @@
+#aboutUs h1 {
+    margin: 1.5rem auto !important;
+}
+
+.founders {
+    text-align: center;
+}
+    .founders h3 {
+        margin: 1rem auto !important;
+    }
